@@ -1,0 +1,114 @@
+// Backend de Casalta.
+// Local: SQLite (cero configuración). Para producción cambiar provider a "postgresql"
+// y apuntar DATABASE_URL a Neon / Vercel Postgres — el resto del esquema es portable.
+
+generator client {
+  provider = "prisma-client-js"
+  output   = "../src/generated/prisma"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+model Host {
+  id         String     @id @default(cuid())
+  name       String
+  email      String?    @unique
+  phone      String     @unique
+  createdAt  DateTime   @default(now())
+  registries Registry[]
+}
+
+model Registry {
+  id        String   @id @default(cuid())
+  slug      String   @unique
+  title     String // "Ana & Diego"
+  eventType String   @default("Boda")
+  eventDate DateTime?
+  venue     String?
+  message   String?
+  heroSeed  String   @default("demo-hero")
+  plan      String   @default("esencial") // esencial | completo | atelier
+  published Boolean  @default(false)
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  hostId String?
+  host   Host?   @relation(fields: [hostId], references: [id], onDelete: SetNull)
+
+  goals         Goal[]
+  gifts         Gift[]
+  rsvps         Rsvp[]
+  contributions Contribution[]
+
+  @@index([slug])
+}
+
+model Goal {
+  id         String @id @default(cuid())
+  registryId String
+  name       String
+  target     Int // centavos-free: pesos enteros
+  sortOrder  Int    @default(0)
+
+  registry      Registry       @relation(fields: [registryId], references: [id], onDelete: Cascade)
+  contributions Contribution[]
+
+  @@index([registryId])
+}
+
+model Gift {
+  id         String  @id @default(cuid())
+  registryId String
+  name       String
+  brand      String  @default("")
+  price      Int
+  seed       String  @default("p-generic")
+  claimed    Boolean @default(false)
+  sortOrder  Int     @default(0)
+
+  registry      Registry       @relation(fields: [registryId], references: [id], onDelete: Cascade)
+  contributions Contribution[]
+
+  @@index([registryId])
+}
+
+model Contribution {
+  id         String   @id @default(cuid())
+  registryId String
+  goalId     String?
+  giftId     String?
+  amount     Int
+  msi        Int      @default(0) // 0, 3, 6, 12 meses sin intereses
+  guestName  String
+  guestPhone String?
+  message    String?
+  status     String   @default("pagado") // pendiente | pagado | reembolsado
+  thanked    Boolean  @default(false)
+  createdAt  DateTime @default(now())
+
+  registry Registry @relation(fields: [registryId], references: [id], onDelete: Cascade)
+  goal     Goal?    @relation(fields: [goalId], references: [id], onDelete: SetNull)
+  gift     Gift?    @relation(fields: [giftId], references: [id], onDelete: SetNull)
+
+  @@index([registryId])
+}
+
+model Rsvp {
+  id         String   @id @default(cuid())
+  registryId String
+  firstName  String
+  lastName   String
+  phone      String
+  attending  Boolean  @default(true)
+  companions Int      @default(0)
+  message    String?
+  createdAt  DateTime @default(now())
+
+  registry Registry @relation(fields: [registryId], references: [id], onDelete: Cascade)
+
+  @@unique([registryId, phone])
+  @@index([registryId])
+}
