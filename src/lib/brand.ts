@@ -39,7 +39,6 @@ export const wordmarkLetters: WordmarkLetter[] = [
 
 export const nav = [
   { href: "/colecciones", label: "Colecciones" },
-  { href: "/como-funciona", label: "Cómo funciona" },
   { href: "/planes", label: "Planes" },
   { href: "/buscar-mesa", label: "Buscar una mesa" },
 ] as const;
