@@ -43,9 +43,9 @@ export default function RegistryClient({
     <>
       {/* Metas en efectivo */}
       {goals.length > 0 && (
-        <section className="border-y border-sand-dark bg-sand/40">
+        <section className="border-y border-line bg-shell/40">
           <div className="mx-auto max-w-[1400px] px-5 py-20 md:px-10 md:py-24">
-            <p className="eyebrow text-clay">Nuestras metas</p>
+            <p className="eyebrow text-sage-deep">Nuestras metas</p>
             <h2 className="display mt-4 text-[clamp(1.75rem,3.6vw,2.75rem)]">
               Si prefieren aportar en efectivo
             </h2>
@@ -54,18 +54,18 @@ export default function RegistryClient({
               {goals.map((g) => (
                 <div
                   key={g.id}
-                  className="rounded-[1.75rem] border border-sand-dark bg-cream p-8"
+                  className="rounded-[1.75rem] border border-line bg-cream p-8"
                 >
                   <div className="flex items-start justify-between gap-6">
                     <h3 className="display text-2xl">{g.name}</h3>
-                    <p className="display shrink-0 text-2xl text-clay">
+                    <p className="display shrink-0 text-2xl text-sage-deep">
                       {g.pct}%
                     </p>
                   </div>
 
-                  <div className="mt-6 h-2.5 overflow-hidden rounded-full bg-sand-dark">
+                  <div className="mt-6 h-2.5 overflow-hidden rounded-full bg-line">
                     <div
-                      className="h-full rounded-full bg-clay transition-[width] duration-700"
+                      className="h-full rounded-full bg-sage transition-[width] duration-700"
                       style={{ width: `${g.pct}%` }}
                     />
                   </div>
@@ -89,7 +89,7 @@ export default function RegistryClient({
                         onClick={() =>
                           setTarget({ kind: "goal", goal: g, amount: amt })
                         }
-                        className="rounded-full border border-ink/15 px-5 py-2.5 text-sm transition-all hover:border-clay hover:bg-clay hover:text-cream"
+                        className="rounded-full border border-ink/15 px-5 py-2.5 text-sm transition-all hover:border-sage hover:bg-sage-deep hover:text-cream"
                       >
                         {mxn(amt)}
                       </button>
@@ -98,7 +98,7 @@ export default function RegistryClient({
                       onClick={() =>
                         setTarget({ kind: "goal", goal: g, amount: 0 })
                       }
-                      className="rounded-full bg-ink px-5 py-2.5 text-sm text-cream transition-colors hover:bg-clay"
+                      className="rounded-full bg-forest px-5 py-2.5 text-sm text-cream transition-colors hover:bg-sage-deep"
                     >
                       Otro monto
                     </button>
@@ -114,7 +114,7 @@ export default function RegistryClient({
       <section className="mx-auto max-w-[1400px] px-5 py-20 md:px-10 md:py-28">
         <div className="flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
           <div>
-            <p className="eyebrow text-clay">Mesa de regalos</p>
+            <p className="eyebrow text-sage-deep">Mesa de regalos</p>
             <h2 className="display mt-4 text-[clamp(1.75rem,3.6vw,2.75rem)]">
               Lo que nos hace falta
             </h2>
@@ -128,7 +128,7 @@ export default function RegistryClient({
         <div className="mt-12 grid gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-4">
           {gifts.map((g) => (
             <article key={g.id} className="group flex flex-col">
-              <div className="relative aspect-square overflow-hidden rounded-2xl bg-sand">
+              <div className="relative aspect-square overflow-hidden rounded-2xl bg-shell">
                 <Image
                   src={img(g.seed, 600, 600)}
                   alt={g.name}
@@ -159,8 +159,8 @@ export default function RegistryClient({
                 onClick={() => setTarget({ kind: "gift", gift: g })}
                 className={`mt-4 rounded-full py-3 text-sm transition-colors ${
                   g.claimed
-                    ? "cursor-not-allowed border border-sand-dark text-ink-50"
-                    : "bg-ink text-cream hover:bg-clay"
+                    ? "cursor-not-allowed border border-line text-ink-50"
+                    : "bg-forest text-cream hover:bg-sage-deep"
                 }`}
               >
                 {g.claimed ? "No disponible" : "Regalar esto"}
@@ -184,7 +184,7 @@ export default function RegistryClient({
 /* ─────────── Diálogo de aportación ─────────── */
 
 const field =
-  "w-full rounded-xl border border-sand-dark bg-cream px-4 py-3.5 transition-colors placeholder:text-ink-50 focus:border-clay focus:outline-none";
+  "w-full rounded-xl border border-line bg-cream px-4 py-3.5 transition-colors placeholder:text-ink-50 focus:border-sage focus:outline-none";
 
 function ContributeDialog({
   slug,
@@ -255,18 +255,18 @@ function ContributeDialog({
 
   return (
     <div
-      className="fixed inset-0 z-[100] flex items-end justify-center bg-ink/60 p-0 backdrop-blur-sm sm:items-center sm:p-6"
+      className="fixed inset-0 z-[100] flex items-end justify-center bg-forest/60 p-0 backdrop-blur-sm sm:items-center sm:p-6"
       onClick={onClose}
       role="dialog"
       aria-modal="true"
     >
       <div
         onClick={(e) => e.stopPropagation()}
-        className="max-h-[92vh] w-full max-w-lg overflow-y-auto rounded-t-[1.75rem] border border-sand-dark bg-cream p-7 sm:rounded-[1.75rem] md:p-9"
+        className="max-h-[92vh] w-full max-w-lg overflow-y-auto rounded-t-[1.75rem] border border-line bg-cream p-7 sm:rounded-[1.75rem] md:p-9"
       >
         {state === "done" ? (
           <div className="py-6 text-center">
-            <p className="display text-4xl text-clay">¡Gracias!</p>
+            <p className="display text-4xl text-sage-deep">¡Gracias!</p>
             <p className="mt-4 text-ink-70">
               {isGift
                 ? `Quedó apartado «${target.gift.name}».`
@@ -275,7 +275,7 @@ function ContributeDialog({
             </p>
             <button
               onClick={onClose}
-              className="mt-8 rounded-full bg-ink px-7 py-3.5 text-cream transition-colors hover:bg-clay"
+              className="mt-8 rounded-full bg-forest px-7 py-3.5 text-cream transition-colors hover:bg-sage-deep"
             >
               Cerrar
             </button>
@@ -284,7 +284,7 @@ function ContributeDialog({
           <form onSubmit={submit}>
             <div className="flex items-start justify-between gap-6">
               <div>
-                <p className="eyebrow text-clay">
+                <p className="eyebrow text-sage-deep">
                   {isGift ? "Regalar" : "Aportar a"}
                 </p>
                 <h3 className="display mt-2 text-2xl">
@@ -303,7 +303,7 @@ function ContributeDialog({
 
             <div className="mt-7 grid gap-4">
               {fixedAmount !== null ? (
-                <div className="rounded-xl border border-sand-dark bg-sand/40 px-4 py-3.5">
+                <div className="rounded-xl border border-line bg-shell/40 px-4 py-3.5">
                   <p className="text-xs text-ink-50">Monto</p>
                   <p className="display text-2xl">{mxn(fixedAmount)}</p>
                 </div>
@@ -357,8 +357,8 @@ function ContributeDialog({
                         onClick={() => setMsi(m)}
                         className={`rounded-full border px-5 py-2.5 text-sm transition-colors ${
                           msi === m
-                            ? "border-clay bg-clay text-cream"
-                            : "border-sand-dark hover:border-ink/30"
+                            ? "border-sage-deep bg-sage-deep text-cream"
+                            : "border-line hover:border-ink/30"
                         }`}
                       >
                         {m === 0 ? "Un solo pago" : `${m} MSI`}
@@ -384,7 +384,7 @@ function ContributeDialog({
               />
 
               {error && (
-                <p className="rounded-xl bg-clay/10 px-4 py-3 text-sm text-clay">
+                <p className="rounded-xl bg-sage/10 px-4 py-3 text-sm text-sage-deep">
                   {error}
                 </p>
               )}
@@ -392,7 +392,7 @@ function ContributeDialog({
               <button
                 type="submit"
                 disabled={state === "sending"}
-                className="mt-1 rounded-full bg-ink py-4 text-cream transition-colors hover:bg-clay disabled:opacity-50"
+                className="mt-1 rounded-full bg-forest py-4 text-cream transition-colors hover:bg-sage-deep disabled:opacity-50"
               >
                 {state === "sending"
                   ? "Procesando…"

@@ -7,7 +7,7 @@ import { collections, eventTypes } from "@/lib/data";
 import { slugify } from "@/lib/slug";
 
 const field =
-  "w-full rounded-xl border border-sand-dark bg-cream px-4 py-3.5 transition-colors placeholder:text-ink-50 focus:border-clay focus:outline-none";
+  "w-full rounded-xl border border-line bg-cream px-4 py-3.5 transition-colors placeholder:text-ink-50 focus:border-sage focus:outline-none";
 
 const goalOptions = [
   "Empezar la casa",
@@ -77,16 +77,16 @@ export default function CreateWizard() {
   /* ─── Confirmación ─── */
   if (created) {
     return (
-      <div className="mx-auto mt-16 max-w-2xl rounded-[2rem] border border-sand-dark bg-sand/40 p-9 text-center md:p-14">
-        <p className="display text-4xl text-clay">Su mesa está creada</p>
+      <div className="mx-auto mt-16 max-w-2xl rounded-[2rem] border border-line bg-shell/40 p-9 text-center md:p-14">
+        <p className="display text-4xl text-sage-deep">Su mesa está creada</p>
         <p className="mt-5 text-ink-70">
           Quedó guardada en la base de datos con {created.gifts} regalos
           {created.goals > 0 && ` y ${created.goals} metas`}. Esta es la única
           liga que tienen que mandar a sus invitados.
         </p>
 
-        <p className="mt-7 rounded-xl border border-sand-dark bg-cream px-5 py-4 font-mono text-sm break-all">
-          casalta.mx{created.url}
+        <p className="mt-7 rounded-xl border border-line bg-cream px-5 py-4 font-mono text-sm break-all">
+          {brand.domain}{created.url}
         </p>
 
         <dl className="mt-9 space-y-3 text-left text-sm">
@@ -98,7 +98,7 @@ export default function CreateWizard() {
           ].map(([k, v]) => (
             <div
               key={k}
-              className="flex justify-between gap-6 border-b border-sand-dark pb-3"
+              className="flex justify-between gap-6 border-b border-line pb-3"
             >
               <dt className="text-ink-50">{k}</dt>
               <dd className="text-right">{v}</dd>
@@ -109,7 +109,7 @@ export default function CreateWizard() {
         <div className="mt-10 flex flex-col gap-3 sm:flex-row sm:justify-center">
           <Link
             href={created.url}
-            className="rounded-full bg-ink px-7 py-3.5 text-cream transition-colors hover:bg-clay"
+            className="rounded-full bg-forest px-7 py-3.5 text-cream transition-colors hover:bg-sage-deep"
           >
             Abrir mi mesa
           </Link>
@@ -132,7 +132,7 @@ export default function CreateWizard() {
           <div key={label} className="flex-1">
             <div
               className={`h-1 rounded-full transition-colors duration-400 ${
-                i <= step ? "bg-clay" : "bg-sand-dark"
+                i <= step ? "bg-sage" : "bg-line"
               }`}
             />
             <p
@@ -146,7 +146,7 @@ export default function CreateWizard() {
         ))}
       </div>
 
-      <div className="mt-10 rounded-[2rem] border border-sand-dark bg-sand/30 p-8 md:p-12">
+      <div className="mt-10 rounded-[2rem] border border-line bg-shell/30 p-8 md:p-12">
         {step === 0 && (
           <Fieldset
             title="¿Qué están celebrando?"
@@ -244,7 +244,7 @@ export default function CreateWizard() {
               <p className="text-sm text-ink-50">
                 Su liga quedaría:{" "}
                 <span className="font-mono text-ink">
-                  casalta.mx/mesa/{previewSlug}
+                  {brand.domain}/mesa/{previewSlug}
                 </span>
               </p>
             </div>
@@ -252,13 +252,13 @@ export default function CreateWizard() {
         )}
 
         {error && (
-          <p className="mt-6 rounded-xl bg-clay/10 px-4 py-3 text-sm text-clay">
+          <p className="mt-6 rounded-xl bg-sage/10 px-4 py-3 text-sm text-sage-deep">
             {error}
           </p>
         )}
 
         {/* Navegación */}
-        <div className="mt-10 flex items-center justify-between gap-4 border-t border-sand-dark pt-8">
+        <div className="mt-10 flex items-center justify-between gap-4 border-t border-line pt-8">
           <button
             onClick={() => setStep((s) => Math.max(0, s - 1))}
             disabled={step === 0 || sending}
@@ -274,7 +274,7 @@ export default function CreateWizard() {
             <button
               onClick={() => (step === 3 ? create() : setStep((s) => s + 1))}
               disabled={!canAdvance || sending}
-              className="rounded-full bg-ink px-7 py-3.5 text-[0.95rem] text-cream transition-colors hover:bg-clay disabled:cursor-not-allowed disabled:opacity-30"
+              className="rounded-full bg-forest px-7 py-3.5 text-[0.95rem] text-cream transition-colors hover:bg-sage-deep disabled:cursor-not-allowed disabled:opacity-30"
             >
               {sending
                 ? "Creando…"
@@ -290,7 +290,7 @@ export default function CreateWizard() {
         ¿Prefieren que alguien lo haga con ustedes?{" "}
         <Link
           href={brand.whatsappUrl}
-          className="text-clay underline decoration-clay/30 underline-offset-4"
+          className="text-sage-deep underline decoration-sage-deep/30 underline-offset-4"
         >
           Escríbannos por WhatsApp
         </Link>
@@ -333,8 +333,8 @@ function Choice({
       aria-pressed={active}
       className={`rounded-xl border px-5 py-4 text-left text-[0.95rem] transition-all duration-200 ${
         active
-          ? "border-clay bg-cream shadow-[inset_0_0_0_1px_var(--color-clay)]"
-          : "border-sand-dark bg-cream/60 hover:border-ink/25"
+          ? "border-sage bg-cream shadow-[inset_0_0_0_1px_var(--color-sage-deep)]"
+          : "border-line bg-cream/60 hover:border-ink/25"
       }`}
     >
       {children}

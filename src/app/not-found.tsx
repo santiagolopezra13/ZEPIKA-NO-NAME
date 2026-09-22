@@ -3,7 +3,7 @@ import Link from "next/link";
 export default function NotFound() {
   return (
     <div className="mx-auto flex min-h-[60vh] max-w-2xl flex-col items-center justify-center px-5 py-24 text-center">
-      <p className="display text-[clamp(4rem,14vw,8rem)] leading-none text-sand-dark">
+      <p className="display text-[clamp(4rem,14vw,8rem)] leading-none text-line">
         404
       </p>
       <h1 className="display mt-6 text-3xl">Esta página no existe</h1>
@@ -14,7 +14,7 @@ export default function NotFound() {
       <div className="mt-10 flex flex-wrap justify-center gap-3">
         <Link
           href="/buscar-mesa"
-          className="rounded-full bg-ink px-7 py-3.5 text-cream transition-colors hover:bg-clay"
+          className="rounded-full bg-forest px-7 py-3.5 text-cream transition-colors hover:bg-sage-deep"
         >
           Buscar una mesa
         </Link>

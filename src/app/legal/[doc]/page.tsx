@@ -73,7 +73,7 @@ export default async function LegalPage({ params }: Props) {
 
   return (
     <div className="mx-auto max-w-3xl px-5 py-16 md:py-24">
-      <p className="eyebrow text-clay">Legal</p>
+      <p className="eyebrow text-sage-deep">Legal</p>
       <h1 className="display mt-4 text-[clamp(2.25rem,5vw,3.5rem)]">
         {content.title}
       </h1>

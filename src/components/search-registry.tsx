@@ -53,7 +53,7 @@ export default function SearchRegistry() {
 
   return (
     <div className="mx-auto mt-14 max-w-2xl">
-      <div className="flex items-center gap-3 rounded-full border border-sand-dark bg-cream px-6 py-2 transition-colors focus-within:border-clay">
+      <div className="flex items-center gap-3 rounded-full border border-line bg-cream px-6 py-2 transition-colors focus-within:border-sage">
         <svg
           width="18"
           height="18"
@@ -98,7 +98,7 @@ export default function SearchRegistry() {
             <button
               key={s}
               onClick={() => setQ(s)}
-              className="rounded-full border border-sand-dark px-4 py-2 text-sm transition-colors hover:border-clay hover:text-clay"
+              className="rounded-full border border-line px-4 py-2 text-sm transition-colors hover:border-sage hover:text-sage-deep"
             >
               {s}
             </button>
@@ -116,13 +116,13 @@ export default function SearchRegistry() {
                 } encontrada${results.length === 1 ? "" : "s"}`}
           </p>
 
-          <ul className="mt-4 divide-y divide-sand-dark border-y border-sand-dark">
+          <ul className="mt-4 divide-y divide-line border-y border-line">
             {results.map((r) => (
               <li key={r.slug}>
                 {r.published ? (
                   <Link
                     href={`/mesa/${r.slug}`}
-                    className="group flex items-center justify-between gap-6 py-5 transition-colors hover:text-clay"
+                    className="group flex items-center justify-between gap-6 py-5 transition-colors hover:text-sage-deep"
                   >
                     <Row r={r} />
                     <span className="shrink-0 text-sm transition-transform group-hover:translate-x-1">
@@ -132,7 +132,7 @@ export default function SearchRegistry() {
                 ) : (
                   <div className="flex items-center justify-between gap-6 py-5">
                     <Row r={r} />
-                    <span className="shrink-0 rounded-full bg-sand px-3 py-1.5 text-xs text-ink-50">
+                    <span className="shrink-0 rounded-full bg-shell px-3 py-1.5 text-xs text-ink-50">
                       Privada
                     </span>
                   </div>

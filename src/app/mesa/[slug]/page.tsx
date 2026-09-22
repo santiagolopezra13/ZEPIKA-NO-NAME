@@ -35,7 +35,7 @@ export default async function RegistryPage({ params }: Props) {
 
   return (
     <>
-      <div className="bg-clay px-5 py-2.5 text-center text-xs text-cream md:px-10">
+      <div className="bg-sage-deep px-5 py-2.5 text-center text-xs text-cream md:px-10">
         Mesa de ejemplo con datos reales de la base de datos — prueben a regalar
         o confirmar.{" "}
         <Link href="/crear" className="underline underline-offset-2">
@@ -53,7 +53,7 @@ export default async function RegistryPage({ params }: Props) {
           sizes="100vw"
           className="object-cover"
         />
-        <div className="absolute inset-0 bg-ink/45" />
+        <div className="absolute inset-0 bg-forest/45" />
         <div className="relative flex h-full flex-col items-center justify-center px-5 text-center text-cream">
           <p className="eyebrow text-cream/70">
             {r.eventType === "Boda" ? "Nos casamos" : r.eventType}
@@ -67,7 +67,7 @@ export default async function RegistryPage({ params }: Props) {
           </div>
           <a
             href="#confirmar"
-            className="mt-10 rounded-full bg-cream px-8 py-3.5 text-ink transition-colors hover:bg-gold"
+            className="mt-10 rounded-full bg-cream px-8 py-3.5 text-ink transition-colors hover:bg-sand"
           >
             Confirmar asistencia
           </a>
@@ -75,7 +75,7 @@ export default async function RegistryPage({ params }: Props) {
       </section>
 
       {/* Indicadores en vivo */}
-      <section className="border-b border-sand-dark">
+      <section className="border-b border-line">
         <div className="mx-auto grid max-w-[1400px] gap-px px-5 md:grid-cols-4 md:px-10">
           {[
             daysLeft !== null && daysLeft >= 0
@@ -87,7 +87,7 @@ export default async function RegistryPage({ params }: Props) {
           ].map(([k, v]) => (
             <div
               key={k}
-              className="border-b border-sand-dark py-7 last:border-b-0 md:border-b-0 md:border-r md:last:border-r-0"
+              className="border-b border-line py-7 last:border-b-0 md:border-b-0 md:border-r md:last:border-r-0"
             >
               <p className="eyebrow text-ink-50">{k}</p>
               <p className="display mt-2 text-2xl">{v}</p>
@@ -116,11 +116,11 @@ export default async function RegistryPage({ params }: Props) {
       {/* Confirmación */}
       <section
         id="confirmar"
-        className="relative overflow-hidden bg-ink text-cream"
+        className="relative overflow-hidden bg-forest text-cream"
       >
         <div className="paper relative mx-auto grid max-w-[1400px] gap-14 px-5 py-24 md:px-10 md:py-28 lg:grid-cols-2">
           <div>
-            <p className="eyebrow text-gold">Confirmación</p>
+            <p className="eyebrow text-sand">Confirmación</p>
             <h2 className="display mt-4 text-[clamp(2rem,4vw,3.25rem)] text-cream">
               ¿Nos acompañan?
             </h2>
@@ -154,7 +154,7 @@ export default async function RegistryPage({ params }: Props) {
         </p>
         <Link
           href="/crear"
-          className="display mt-2 inline-block text-2xl transition-colors hover:text-clay"
+          className="display mt-2 inline-block text-2xl transition-colors hover:text-sage-deep"
         >
           Crear su propia mesa →
         </Link>

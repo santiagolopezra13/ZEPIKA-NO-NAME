@@ -42,7 +42,7 @@ export default function PlansPage() {
     <>
       <Section className="!pb-12 !pt-12">
         <div className="max-w-3xl">
-          <p className="eyebrow text-clay">Planes</p>
+          <p className="eyebrow text-sage-deep">Planes</p>
           <h1 className="display mt-4 text-[clamp(2.5rem,6vw,4.5rem)]">
             Pago único.
             <br />
@@ -61,12 +61,12 @@ export default function PlansPage() {
               key={p.slug}
               className={`relative flex flex-col rounded-[1.75rem] border p-8 md:p-10 ${
                 p.featured
-                  ? "border-ink bg-ink text-cream"
-                  : "border-sand-dark bg-sand/30"
+                  ? "border-ink bg-forest text-cream"
+                  : "border-line bg-shell/30"
               }`}
             >
               {p.featured && (
-                <span className="eyebrow absolute -top-3 left-8 rounded-full bg-gold px-4 py-1.5 text-ink">
+                <span className="eyebrow absolute -top-3 left-8 rounded-full bg-sand px-4 py-1.5 text-ink">
                   Más elegido
                 </span>
               )}
@@ -87,7 +87,7 @@ export default function PlansPage() {
               <div className="mt-8">
                 <p
                   className={`display text-[3.25rem] leading-none ${
-                    p.featured ? "text-gold" : ""
+                    p.featured ? "text-sand" : ""
                   }`}
                 >
                   {p.price === 0 ? "Gratis" : mxn(p.price)}
@@ -106,7 +106,7 @@ export default function PlansPage() {
                   <li key={f} className="flex gap-3 text-sm leading-relaxed">
                     <span
                       className={`mt-[0.35rem] shrink-0 ${
-                        p.featured ? "text-gold" : "text-clay"
+                        p.featured ? "text-sand" : "text-sage-deep"
                       }`}
                     >
                       <svg width="12" height="12" viewBox="0 0 14 14" fill="none" aria-hidden>
@@ -130,8 +130,8 @@ export default function PlansPage() {
                 href={p.slug === "atelier" ? brand.whatsappUrl : "/crear"}
                 className={`mt-9 rounded-full py-3.5 text-center text-[0.95rem] transition-colors ${
                   p.featured
-                    ? "bg-cream text-ink hover:bg-gold"
-                    : "bg-ink text-cream hover:bg-clay"
+                    ? "bg-cream text-ink hover:bg-sand"
+                    : "bg-forest text-cream hover:bg-sage-deep"
                 }`}
               >
                 {p.cta}
@@ -147,11 +147,11 @@ export default function PlansPage() {
       </Section>
 
       {/* Preguntas */}
-      <section className="border-t border-sand-dark bg-sand/40">
+      <section className="border-t border-line bg-shell/40">
         <div className="mx-auto max-w-[1400px] px-5 py-24 md:px-10 md:py-28">
           <div className="grid gap-12 lg:grid-cols-[0.8fr_1.2fr]">
             <div>
-              <p className="eyebrow text-clay">Preguntas</p>
+              <p className="eyebrow text-sage-deep">Preguntas</p>
               <h2 className="display mt-4 text-[clamp(2rem,4vw,3rem)]">
                 Lo que todos
                 <br />
@@ -162,20 +162,20 @@ export default function PlansPage() {
               </p>
               <Link
                 href={brand.whatsappUrl}
-                className="mt-5 inline-block text-clay underline decoration-clay/30 underline-offset-4"
+                className="mt-5 inline-block text-sage-deep underline decoration-sage-deep/30 underline-offset-4"
               >
                 {brand.whatsapp}
               </Link>
             </div>
 
-            <div className="divide-y divide-sand-dark border-t border-sand-dark">
+            <div className="divide-y divide-line border-t border-line">
               {faqs.map((f) => (
                 <details key={f.q} className="group py-6">
                   <summary className="flex cursor-pointer list-none items-start justify-between gap-6">
                     <span className="display text-xl leading-snug md:text-2xl">
                       {f.q}
                     </span>
-                    <span className="mt-1 shrink-0 text-2xl leading-none text-clay transition-transform duration-300 group-open:rotate-45">
+                    <span className="mt-1 shrink-0 text-2xl leading-none text-sage-deep transition-transform duration-300 group-open:rotate-45">
                       +
                     </span>
                   </summary>

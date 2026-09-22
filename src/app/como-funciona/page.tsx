@@ -29,7 +29,7 @@ export default function HowItWorksPage() {
     <>
       <Section className="!pb-12 !pt-12">
         <div className="max-w-3xl">
-          <p className="eyebrow text-clay">Cómo funciona</p>
+          <p className="eyebrow text-sage-deep">Cómo funciona</p>
           <h1 className="display mt-4 text-[clamp(2.5rem,6vw,4.5rem)]">
             Del primer clic
             <br />
@@ -49,10 +49,10 @@ export default function HowItWorksPage() {
           {steps.map((s, i) => (
             <div
               key={s.n}
-              className="grid items-center gap-0 overflow-hidden rounded-[2rem] border border-sand-dark bg-sand/30 md:grid-cols-[1.15fr_0.85fr]"
+              className="grid items-center gap-0 overflow-hidden rounded-[2rem] border border-line bg-shell/30 md:grid-cols-[1.15fr_0.85fr]"
             >
               <div className="p-9 md:p-14">
-                <p className="display text-6xl text-sand-dark">{s.n}</p>
+                <p className="display text-6xl text-line">{s.n}</p>
                 <h2 className="display mt-5 text-[clamp(1.75rem,3.2vw,2.5rem)]">
                   {s.title}
                 </h2>
@@ -61,7 +61,7 @@ export default function HowItWorksPage() {
                 </p>
               </div>
               <div
-                className={`relative aspect-[4/3] bg-sand md:aspect-auto md:min-h-[340px] ${
+                className={`relative aspect-[4/3] bg-shell md:aspect-auto md:min-h-[340px] ${
                   i % 2 ? "md:order-first" : ""
                 }`}
               >
@@ -79,7 +79,7 @@ export default function HowItWorksPage() {
       </Section>
 
       {/* Dos lados */}
-      <section className="border-y border-sand-dark bg-sand/40">
+      <section className="border-y border-line bg-shell/40">
         <div className="mx-auto grid max-w-[1400px] gap-14 px-5 py-24 md:px-10 md:py-28 lg:grid-cols-2">
           {[
             {
@@ -96,20 +96,20 @@ export default function HowItWorksPage() {
             },
           ].map((block) => (
             <div key={block.eyebrow}>
-              <p className="eyebrow text-clay">{block.eyebrow}</p>
+              <p className="eyebrow text-sage-deep">{block.eyebrow}</p>
               <h2 className="display mt-4 text-[clamp(1.75rem,3.4vw,2.5rem)]">
                 {block.title}
               </h2>
               <p className="mt-5 max-w-lg leading-relaxed text-ink-70">
                 {block.body}
               </p>
-              <ol className="mt-9 border-t border-sand-dark">
+              <ol className="mt-9 border-t border-line">
                 {block.items.map(([t, d], idx) => (
                   <li
                     key={t}
-                    className="flex gap-5 border-b border-sand-dark py-5"
+                    className="flex gap-5 border-b border-line py-5"
                   >
-                    <span className="display shrink-0 text-lg text-clay">
+                    <span className="display shrink-0 text-lg text-sage-deep">
                       {String(idx + 1).padStart(2, "0")}
                     </span>
                     <span>
@@ -128,7 +128,7 @@ export default function HowItWorksPage() {
 
       {/* Por qué nosotros */}
       <Section>
-        <p className="eyebrow text-clay">La diferencia</p>
+        <p className="eyebrow text-sage-deep">La diferencia</p>
         <h2 className="display mt-4 max-w-2xl text-[clamp(2rem,4.4vw,3.4rem)]">
           Cuatro cosas que nadie más está haciendo en México.
         </h2>
@@ -137,9 +137,9 @@ export default function HowItWorksPage() {
           {differentiators.map((d) => (
             <div
               key={d.title}
-              className="rounded-[1.75rem] border border-sand-dark p-8 md:p-10"
+              className="rounded-[1.75rem] border border-line p-8 md:p-10"
             >
-              <p className="display text-5xl text-clay">{d.metric}</p>
+              <p className="display text-5xl text-sage-deep">{d.metric}</p>
               <h3 className="display mt-5 text-2xl">{d.title}</h3>
               <p className="mt-3 leading-relaxed text-ink-70">{d.body}</p>
             </div>

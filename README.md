@@ -1,4 +1,4 @@
-# Casalta
+# LÖGUE
 
 Mesa de regalos digital para el mercado mexicano: mesa de regalos, sitio de
 evento, invitación y confirmación de asistencia en una sola liga.

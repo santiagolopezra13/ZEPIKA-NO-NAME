@@ -11,7 +11,7 @@ export default function CreatePage() {
   return (
     <div className="mx-auto max-w-[1400px] px-5 py-16 md:px-10 md:py-20">
       <div className="mx-auto max-w-2xl text-center">
-        <p className="eyebrow text-clay">Crear mi mesa</p>
+        <p className="eyebrow text-sage-deep">Crear mi mesa</p>
         <h1 className="display mt-4 text-[clamp(2.25rem,5.5vw,4rem)]">
           Cuatro preguntas
           <br />

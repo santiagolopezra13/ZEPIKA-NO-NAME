@@ -33,14 +33,14 @@ export function SectionHead({
   return (
     <div className="flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
       <div className="max-w-2xl">
-        <p className="eyebrow text-clay">{eyebrow}</p>
+        <p className="eyebrow text-sage-deep">{eyebrow}</p>
         <h2 className="display mt-4 text-[clamp(2rem,4.6vw,3.6rem)]">{title}</h2>
         {body && <p className="mt-5 max-w-xl text-ink-70">{body}</p>}
       </div>
       {cta && (
         <Link
           href={cta.href}
-          className="group shrink-0 text-sm text-ink transition-colors hover:text-clay"
+          className="group shrink-0 text-sm text-ink transition-colors hover:text-sage-deep"
         >
           {cta.label}
           <span className="ml-2 inline-block transition-transform group-hover:translate-x-1">
@@ -64,9 +64,9 @@ export function Button({
   className?: string;
 }) {
   const styles = {
-    solid: "bg-ink text-cream hover:bg-clay",
-    outline: "border border-ink/20 text-ink hover:border-ink/50 hover:bg-sand/50",
-    light: "bg-cream text-ink hover:bg-gold",
+    solid: "bg-forest text-cream hover:bg-sage-deep",
+    outline: "border border-ink/20 text-ink hover:border-ink/50 hover:bg-shell/50",
+    light: "bg-cream text-ink hover:bg-sand",
   }[variant];
 
   return (

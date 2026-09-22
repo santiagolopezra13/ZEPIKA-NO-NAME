@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { brand } from "@/lib/brand";
 import { collections } from "@/lib/data";
+import Wordmark from "@/components/wordmark";
 
 const columns = [
   {
@@ -32,7 +33,7 @@ const columns = [
 
 export default function SiteFooter() {
   return (
-    <footer className="relative mt-32 overflow-hidden bg-ink text-cream">
+    <footer className="relative mt-32 overflow-hidden bg-forest text-cream">
       <div className="paper relative mx-auto max-w-[1400px] px-5 pt-20 pb-10 md:px-10 md:pt-28">
         {/* Cierre */}
         <div className="grid gap-12 border-b border-cream/12 pb-16 lg:grid-cols-[1.2fr_1fr]">
@@ -45,7 +46,7 @@ export default function SiteFooter() {
             <div className="mt-8 flex flex-wrap gap-3">
               <Link
                 href="/crear"
-                className="rounded-full bg-cream px-7 py-3.5 text-ink transition-colors hover:bg-gold"
+                className="rounded-full bg-cream px-7 py-3.5 text-ink transition-colors hover:bg-sand"
               >
                 Crear mi mesa gratis
               </Link>
@@ -74,7 +75,7 @@ export default function SiteFooter() {
               />
               <button
                 type="submit"
-                className="shrink-0 text-sm text-gold transition-opacity hover:opacity-70"
+                className="shrink-0 text-sm text-sand transition-opacity hover:opacity-70"
               >
                 Suscribirme →
               </button>
@@ -85,10 +86,7 @@ export default function SiteFooter() {
         {/* Enlaces */}
         <div className="grid gap-10 py-14 sm:grid-cols-2 lg:grid-cols-4">
           <div>
-            <p className="display text-2xl text-cream">
-              {brand.name}
-              <span className="text-gold">.</span>
-            </p>
+            <Wordmark tone="cream" className="text-[1.9rem]" />
             <p className="mt-3 max-w-[20ch] text-sm text-cream/55">
               {brand.tagline}
             </p>
@@ -103,7 +101,7 @@ export default function SiteFooter() {
                   <li key={l.href + l.label}>
                     <Link
                       href={l.href}
-                      className="text-sm text-cream/75 transition-colors hover:text-gold"
+                      className="text-sm text-cream/75 transition-colors hover:text-sand"
                     >
                       {l.label}
                     </Link>

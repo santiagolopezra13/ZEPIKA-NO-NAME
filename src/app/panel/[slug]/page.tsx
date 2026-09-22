@@ -44,9 +44,9 @@ export default async function PanelPage({ params }: Props) {
   return (
     <div className="mx-auto max-w-[1400px] px-5 py-12 md:px-10 md:py-16">
       {/* Encabezado */}
-      <div className="flex flex-col gap-6 border-b border-sand-dark pb-10 md:flex-row md:items-end md:justify-between">
+      <div className="flex flex-col gap-6 border-b border-line pb-10 md:flex-row md:items-end md:justify-between">
         <div>
-          <p className="eyebrow text-clay">Panel del anfitrión</p>
+          <p className="eyebrow text-sage-deep">Panel del anfitrión</p>
           <h1 className="display mt-3 text-[clamp(2rem,5vw,3.5rem)]">
             {registry.title}
           </h1>
@@ -59,27 +59,27 @@ export default async function PanelPage({ params }: Props) {
         <div className="flex flex-wrap gap-3">
           <Link
             href={`/mesa/${registry.slug}`}
-            className="rounded-full bg-ink px-6 py-3 text-sm text-cream transition-colors hover:bg-clay"
+            className="rounded-full bg-forest px-6 py-3 text-sm text-cream transition-colors hover:bg-sage-deep"
           >
             Ver mesa pública
           </Link>
           <span
             className={`rounded-full border px-5 py-3 text-sm ${
               registry.published
-                ? "border-olive/40 bg-olive/10 text-olive"
-                : "border-sand-dark text-ink-50"
+                ? "border-sage/40 bg-sage/10 text-sage-deep"
+                : "border-line text-ink-50"
             }`}
           >
             {registry.published ? "Publicada" : "Borrador"}
           </span>
-          <span className="rounded-full border border-sand-dark px-5 py-3 text-sm capitalize">
+          <span className="rounded-full border border-line px-5 py-3 text-sm capitalize">
             Plan {registry.plan}
           </span>
         </div>
       </div>
 
       {/* Indicadores */}
-      <div className="grid gap-px border-b border-sand-dark py-10 sm:grid-cols-2 lg:grid-cols-4">
+      <div className="grid gap-px border-b border-line py-10 sm:grid-cols-2 lg:grid-cols-4">
         {[
           ["Recaudado", mxn(total), `${paid.length} aportaciones`],
           [
@@ -110,21 +110,21 @@ export default async function PanelPage({ params }: Props) {
 
       {/* Metas */}
       {registry.goals.length > 0 && (
-        <section className="border-b border-sand-dark py-12">
+        <section className="border-b border-line py-12">
           <h2 className="display text-2xl">Avance de metas</h2>
           <div className="mt-8 grid gap-6 lg:grid-cols-2">
             {registry.goals.map((g) => (
               <div
                 key={g.id}
-                className="rounded-2xl border border-sand-dark bg-sand/30 p-6"
+                className="rounded-2xl border border-line bg-shell/30 p-6"
               >
                 <div className="flex items-baseline justify-between gap-4">
                   <p className="font-medium">{g.name}</p>
-                  <p className="display text-xl text-clay">{g.pct}%</p>
+                  <p className="display text-xl text-sage-deep">{g.pct}%</p>
                 </div>
-                <div className="mt-4 h-2 overflow-hidden rounded-full bg-sand-dark">
+                <div className="mt-4 h-2 overflow-hidden rounded-full bg-line">
                   <div
-                    className="h-full rounded-full bg-clay"
+                    className="h-full rounded-full bg-sage"
                     style={{ width: `${g.pct}%` }}
                   />
                 </div>
@@ -148,11 +148,11 @@ export default async function PanelPage({ params }: Props) {
           </div>
 
           {contributions.length === 0 ? (
-            <p className="mt-6 rounded-2xl border border-sand-dark bg-sand/30 p-6 text-sm text-ink-50">
+            <p className="mt-6 rounded-2xl border border-line bg-shell/30 p-6 text-sm text-ink-50">
               Todavía no hay aportaciones. Compartan su liga para empezar.
             </p>
           ) : (
-            <ul className="mt-6 divide-y divide-sand-dark border-y border-sand-dark">
+            <ul className="mt-6 divide-y divide-line border-y border-line">
               {contributions.map((c) => (
                 <li key={c.id} className="py-5">
                   <div className="flex items-start justify-between gap-4">
@@ -171,12 +171,12 @@ export default async function PanelPage({ params }: Props) {
                     </div>
                   </div>
                   {c.message && (
-                    <p className="mt-3 border-l-2 border-clay/40 pl-4 text-sm text-ink-70 italic">
+                    <p className="mt-3 border-l-2 border-sage/40 pl-4 text-sm text-ink-70 italic">
                       “{c.message}”
                     </p>
                   )}
                   {!c.thanked && (
-                    <span className="mt-3 inline-block rounded-full bg-clay/10 px-3 py-1 text-xs text-clay">
+                    <span className="mt-3 inline-block rounded-full bg-sage/10 px-3 py-1 text-xs text-sage-deep">
                       Pendiente de agradecer
                     </span>
                   )}
@@ -195,11 +195,11 @@ export default async function PanelPage({ params }: Props) {
           </div>
 
           {rsvps.length === 0 ? (
-            <p className="mt-6 rounded-2xl border border-sand-dark bg-sand/30 p-6 text-sm text-ink-50">
+            <p className="mt-6 rounded-2xl border border-line bg-shell/30 p-6 text-sm text-ink-50">
               Nadie ha confirmado todavía.
             </p>
           ) : (
-            <ul className="mt-6 divide-y divide-sand-dark border-y border-sand-dark">
+            <ul className="mt-6 divide-y divide-line border-y border-line">
               {rsvps.map((r) => (
                 <li
                   key={r.id}
@@ -222,8 +222,8 @@ export default async function PanelPage({ params }: Props) {
                   <span
                     className={`shrink-0 rounded-full px-3 py-1 text-xs ${
                       r.attending
-                        ? "bg-olive/12 text-olive"
-                        : "bg-sand text-ink-50"
+                        ? "bg-sage/15 text-sage-deep"
+                        : "bg-shell text-ink-50"
                     }`}
                   >
                     {r.attending ? "Asiste" : "No asiste"}
@@ -235,7 +235,7 @@ export default async function PanelPage({ params }: Props) {
         </section>
       </div>
 
-      <p className="border-t border-sand-dark pt-8 text-xs text-ink-50">
+      <p className="border-t border-line pt-8 text-xs text-ink-50">
         Panel de demostración: todavía sin autenticación. En producción esta
         ruta queda detrás del inicio de sesión del anfitrión.
       </p>

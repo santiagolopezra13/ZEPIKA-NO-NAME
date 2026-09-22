@@ -10,7 +10,7 @@ export const metadata: Metadata = {
 };
 
 const field =
-  "w-full rounded-xl border border-sand-dark bg-cream px-4 py-3.5 transition-colors placeholder:text-ink-50 focus:border-clay focus:outline-none";
+  "w-full rounded-xl border border-line bg-cream px-4 py-3.5 transition-colors placeholder:text-ink-50 focus:border-sage focus:outline-none";
 
 export default function LoginPage() {
   return (
@@ -18,7 +18,7 @@ export default function LoginPage() {
       {/* Formulario */}
       <div className="flex flex-col justify-center py-8 lg:py-16">
         <div className="mx-auto w-full max-w-md">
-          <p className="eyebrow text-clay">Panel de anfitriones</p>
+          <p className="eyebrow text-sage-deep">Panel de anfitriones</p>
           <h1 className="display mt-4 text-[clamp(2.25rem,5vw,3.5rem)]">
             Entrar a mi mesa
           </h1>
@@ -35,16 +35,16 @@ export default function LoginPage() {
             />
             <button
               type="button"
-              className="rounded-full bg-ink py-4 text-cream transition-colors hover:bg-clay"
+              className="rounded-full bg-forest py-4 text-cream transition-colors hover:bg-sage-deep"
             >
               Enviarme el código
             </button>
           </form>
 
           <div className="my-8 flex items-center gap-4">
-            <span className="h-px flex-1 bg-sand-dark" />
+            <span className="h-px flex-1 bg-line" />
             <span className="text-xs text-ink-50">o con correo</span>
-            <span className="h-px flex-1 bg-sand-dark" />
+            <span className="h-px flex-1 bg-line" />
           </div>
 
           <form className="grid gap-4">
@@ -72,7 +72,7 @@ export default function LoginPage() {
             ¿Todavía no tienen mesa?{" "}
             <Link
               href="/crear"
-              className="text-clay underline decoration-clay/30 underline-offset-4"
+              className="text-sage-deep underline decoration-sage-deep/30 underline-offset-4"
             >
               Crearla gratis
             </Link>
@@ -81,7 +81,7 @@ export default function LoginPage() {
             ¿Son invitados buscando una mesa?{" "}
             <Link
               href="/buscar-mesa"
-              className="text-clay underline decoration-clay/30 underline-offset-4"
+              className="text-sage-deep underline decoration-sage-deep/30 underline-offset-4"
             >
               Buscarla aquí
             </Link>
@@ -95,7 +95,7 @@ export default function LoginPage() {
       </div>
 
       {/* Visual */}
-      <div className="relative hidden overflow-hidden rounded-[2rem] bg-sand lg:block">
+      <div className="relative hidden overflow-hidden rounded-[2rem] bg-shell lg:block">
         <Image
           src={img("login-visual", 1000, 1300)}
           alt=""
@@ -103,7 +103,7 @@ export default function LoginPage() {
           sizes="50vw"
           className="object-cover"
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-ink/80 via-ink/20 to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-t from-forest/80 via-forest/20 to-transparent" />
         <blockquote className="absolute inset-x-0 bottom-0 p-12 text-cream">
           <p className="display text-3xl leading-snug">
             “Retiramos ciento ochenta mil y llegaron ciento ochenta mil.”

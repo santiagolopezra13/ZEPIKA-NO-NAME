@@ -1,14 +1,17 @@
 import type { Metadata } from "next";
-import { Fraunces, Inter } from "next/font/google";
+import { Cormorant_Garamond, Inter } from "next/font/google";
 import "./globals.css";
 import { brand } from "@/lib/brand";
 import SiteHeader from "@/components/site-header";
 import SiteFooter from "@/components/site-footer";
 
-const fraunces = Fraunces({
-  variable: "--font-fraunces",
+/**
+ * Serif de alto contraste, la más cercana al trazo del logotipo.
+ * Es fuente variable: no lleva `weight` (Turbopack solo admite una consulta).
+ */
+const cormorant = Cormorant_Garamond({
+  variable: "--font-cormorant",
   subsets: ["latin"],
-  axes: ["SOFT", "WONK"],
   display: "swap",
 });
 
@@ -45,7 +48,7 @@ export default function RootLayout({
 }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="es-MX">
-      <body className={`${fraunces.variable} ${inter.variable}`}>
+      <body className={`${cormorant.variable} ${inter.variable}`}>
         <SiteHeader />
         <main>{children}</main>
         <SiteFooter />

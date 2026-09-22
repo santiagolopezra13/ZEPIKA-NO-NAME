@@ -4,7 +4,7 @@ import { useRouter } from "next/navigation";
 import { useState } from "react";
 
 const field =
-  "w-full rounded-xl border border-cream/20 bg-cream/[0.06] px-4 py-3.5 text-cream placeholder:text-cream/35 transition-colors focus:border-gold focus:outline-none";
+  "w-full rounded-xl border border-cream/20 bg-cream/[0.06] px-4 py-3.5 text-cream placeholder:text-cream/35 transition-colors focus:border-sand focus:outline-none";
 
 export default function RsvpForm({ slug }: { slug: string }) {
   const router = useRouter();
@@ -54,8 +54,8 @@ export default function RsvpForm({ slug }: { slug: string }) {
 
   if (state === "done") {
     return (
-      <div className="flex flex-col items-start justify-center rounded-[1.75rem] border border-gold/40 bg-cream/[0.06] p-10">
-        <p className="display text-3xl text-gold">¡Quedó registrado!</p>
+      <div className="flex flex-col items-start justify-center rounded-[1.75rem] border border-sand/40 bg-cream/[0.06] p-10">
+        <p className="display text-3xl text-sand">¡Quedó registrado!</p>
         <p className="mt-4 max-w-sm text-cream/75">{serverMessage}</p>
         <button
           onClick={() => {
@@ -66,7 +66,7 @@ export default function RsvpForm({ slug }: { slug: string }) {
             setMessage("");
             setCompanions(0);
           }}
-          className="mt-8 text-sm text-gold underline underline-offset-4"
+          className="mt-8 text-sm text-sand underline underline-offset-4"
         >
           Registrar otra respuesta
         </button>
@@ -126,7 +126,7 @@ export default function RsvpForm({ slug }: { slug: string }) {
                 onClick={() => setAttending(val)}
                 className={`rounded-xl border px-4 py-3.5 text-sm transition-colors ${
                   attending === val
-                    ? "border-gold bg-gold text-ink"
+                    ? "border-sand bg-sand text-ink"
                     : "border-cream/20 text-cream/80 hover:border-cream/45"
                 }`}
               >
@@ -160,7 +160,7 @@ export default function RsvpForm({ slug }: { slug: string }) {
         />
 
         {error && (
-          <p className="rounded-xl bg-gold/15 px-4 py-3 text-sm text-gold">
+          <p className="rounded-xl bg-sand/15 px-4 py-3 text-sm text-sand">
             {error}
           </p>
         )}
@@ -168,7 +168,7 @@ export default function RsvpForm({ slug }: { slug: string }) {
         <button
           type="submit"
           disabled={state === "sending"}
-          className="mt-2 rounded-full bg-cream py-4 text-ink transition-colors hover:bg-gold disabled:opacity-50"
+          className="mt-2 rounded-full bg-cream py-4 text-ink transition-colors hover:bg-sand disabled:opacity-50"
         >
           {state === "sending" ? "Enviando…" : "Enviar confirmación"}
         </button>

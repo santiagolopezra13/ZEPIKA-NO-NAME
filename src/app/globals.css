@@ -1,21 +1,34 @@
 @import "tailwindcss";
 
+/**
+ * Paleta LÖGUE — extraída directamente del logotipo.
+ *
+ *   forest  #2E4239   la L
+ *   sage    #7A8467   la Ö y la E
+ *   sand    #C8B598   la G y el punto cálido de la diéresis
+ *   mist    #96A8B4   la U y el punto frío de la diéresis
+ *
+ * sage, sand y mist son colores de relleno: sobre fondo claro no alcanzan
+ * 4.5:1, así que para texto pequeño se usa sage-deep (5.99:1) y para texto
+ * sobre fondo oscuro se usa sand (5.38:1 sobre forest).
+ */
 @theme {
-  /* Neutros cálidos */
-  --color-ink: #17130f;
-  --color-ink-70: #4a423b;
-  --color-ink-50: #7a7069;
-  --color-cream: #faf6f0;
-  --color-sand: #f0e8dc;
-  --color-sand-dark: #e2d6c5;
+  /* Marca */
+  --color-forest: #2e4239;
+  --color-sage: #7a8467;
+  --color-sage-deep: #566349;
+  --color-sand: #c8b598;
+  --color-mist: #96a8b4;
 
-  /* Acentos */
-  --color-clay: #a9563c;
-  --color-clay-dark: #8c4530;
-  --color-olive: #4f5d45;
-  --color-gold: #c3a268;
+  /* Neutros derivados */
+  --color-ink: #1e2a24;
+  --color-ink-70: #56604f;
+  --color-ink-50: #67705f;
+  --color-cream: #f9f7f3;
+  --color-shell: #efeae1;
+  --color-line: #ded7ca;
 
-  --font-display: var(--font-fraunces), Georgia, serif;
+  --font-display: var(--font-cormorant), "Times New Roman", serif;
   --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
 
   --radius-xs: 0.25rem;
@@ -28,7 +41,7 @@
 }
 
 * {
-  border-color: color-mix(in oklab, var(--color-sand-dark) 70%, transparent);
+  border-color: var(--color-line);
 }
 
 html {
@@ -46,17 +59,20 @@ body {
 }
 
 ::selection {
-  background: var(--color-clay);
-  color: var(--color-cream);
+  background: var(--color-sand);
+  color: var(--color-ink);
 }
 
-/* Tipografía editorial */
+/**
+ * Tipografía editorial. Cormorant Garamond tiene el mismo contraste
+ * grueso-delgado del logotipo, pero monta chico: de ahí el 1.06em.
+ */
 .display {
   font-family: var(--font-display);
   font-weight: 400;
-  letter-spacing: -0.025em;
-  line-height: 0.98;
-  font-variation-settings: "SOFT" 0, "WONK" 1;
+  font-size: 1.06em;
+  letter-spacing: -0.012em;
+  line-height: 1.02;
 }
 
 .eyebrow {
@@ -66,16 +82,16 @@ body {
   font-weight: 500;
 }
 
-/* Textura de papel muy sutil */
+/* Textura de papel muy sutil sobre los bloques oscuros */
 .paper::before {
   content: "";
   position: absolute;
   inset: 0;
   pointer-events: none;
-  opacity: 0.035;
+  opacity: 0.04;
   background-image: radial-gradient(
     circle at 1px 1px,
-    var(--color-ink) 1px,
+    var(--color-cream) 1px,
     transparent 0
   );
   background-size: 4px 4px;
@@ -86,7 +102,7 @@ body {
   background: linear-gradient(
     to right,
     transparent,
-    var(--color-sand-dark),
+    var(--color-line),
     transparent
   );
 }

@@ -33,14 +33,14 @@ export default async function CollectionPage({ params }: Props) {
       <Section className="!pb-10 !pt-10">
         <Link
           href="/colecciones"
-          className="text-sm text-ink-50 transition-colors hover:text-clay"
+          className="text-sm text-ink-50 transition-colors hover:text-sage-deep"
         >
           ← Todas las colecciones
         </Link>
 
         <div className="mt-8 grid gap-10 lg:grid-cols-[1.1fr_1fr] lg:items-center">
           <div>
-            <p className="eyebrow text-clay">Colección</p>
+            <p className="eyebrow text-sage-deep">Colección</p>
             <h1 className="display mt-4 text-[clamp(2.5rem,6vw,4.5rem)]">
               {collection.name}
             </h1>
@@ -72,7 +72,7 @@ export default async function CollectionPage({ params }: Props) {
             </div>
           </div>
 
-          <div className="relative aspect-[4/3] overflow-hidden rounded-[2rem] bg-sand lg:aspect-[4/4.2]">
+          <div className="relative aspect-[4/3] overflow-hidden rounded-[2rem] bg-shell lg:aspect-[4/4.2]">
             <Image
               src={img(collection.seed, 1000, 1100)}
               alt={collection.name}
@@ -97,7 +97,7 @@ export default async function CollectionPage({ params }: Props) {
         <div className="mt-10 grid gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-3">
           {collection.products.map((p) => (
             <article key={p.id} className="group">
-              <div className="relative aspect-square overflow-hidden rounded-2xl bg-sand">
+              <div className="relative aspect-square overflow-hidden rounded-2xl bg-shell">
                 <Image
                   src={img(p.seed, 700, 700)}
                   alt={p.name}
@@ -128,7 +128,7 @@ export default async function CollectionPage({ params }: Props) {
               href={`/colecciones/${c.slug}`}
               className="group block"
             >
-              <div className="relative aspect-[4/3] overflow-hidden rounded-2xl bg-sand">
+              <div className="relative aspect-[4/3] overflow-hidden rounded-2xl bg-shell">
                 <Image
                   src={img(c.seed, 700, 520)}
                   alt={c.name}

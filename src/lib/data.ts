@@ -1,3 +1,4 @@
+import { brand } from "@/lib/brand";
 /**
  * Datos de maqueta. Sustituir por CMS / base de datos.
  * Las imágenes son placeholders determinísticos (picsum) — cambiar por fotografía propia.
@@ -30,7 +31,7 @@ export const collections: Collection[] = [
     blurb: "Lo esencial para empezar, sin relleno.",
     description:
       "Una mesa completa para quienes se mudan juntos por primera vez: blancos, batería de cocina, vajilla diaria y lo que de verdad se usa el primer año.",
-    seed: "casalta-hogar",
+    seed: "logue-hogar",
     products: [
       { id: "ph1", name: "Batería de cocina 10 piezas", brand: "Acero mate", price: 8900, seed: "p-bateria" },
       { id: "ph2", name: "Juego de sábanas algodón 400 hilos", brand: "Lino Casa", price: 3200, seed: "p-sabanas" },
@@ -46,7 +47,7 @@ export const collections: Collection[] = [
     blurb: "Para quien cocina en serio.",
     description:
       "Hierro fundido, cuchillería, fermentos y café de especialidad. La mesa para las parejas que pasan el domingo entero en la cocina.",
-    seed: "casalta-cocina",
+    seed: "logue-cocina",
     products: [
       { id: "ca1", name: "Olla de hierro fundido 5.3 L", brand: "Fundición", price: 11500, seed: "p-olla" },
       { id: "ca2", name: "Molino de café cónico", brand: "Grano", price: 5400, seed: "p-molino" },
@@ -62,7 +63,7 @@ export const collections: Collection[] = [
     blurb: "Para recibir gente en casa.",
     description:
       "Vajilla para doce, cristalería, mantelería de lino y todo lo que hace falta cuando la familia cae sin avisar.",
-    seed: "casalta-domingo",
+    seed: "logue-domingo",
     products: [
       { id: "md1", name: "Cristalería vino 6 piezas", brand: "Soplado", price: 2900, seed: "p-copas" },
       { id: "md2", name: "Mantel de lino 3 m", brand: "Lino Casa", price: 2600, seed: "p-mantel" },
@@ -78,7 +79,7 @@ export const collections: Collection[] = [
     blurb: "Aportaciones en efectivo, por tramos.",
     description:
       "En lugar de un objeto, los invitados aportan a vuelos, hospedaje, cenas y experiencias. Ustedes definen las metas y el monto de cada tramo.",
-    seed: "casalta-luna",
+    seed: "logue-luna",
     products: [
       { id: "lm1", name: "Vuelos ida y vuelta", brand: "Meta en efectivo", price: 38000, seed: "p-vuelos" },
       { id: "lm2", name: "Siete noches frente al mar", brand: "Meta en efectivo", price: 46000, seed: "p-hotel" },
@@ -94,7 +95,7 @@ export const collections: Collection[] = [
     blurb: "La casa también es lo de afuera.",
     description:
       "Asador, macetería, textiles de exterior y mobiliario para la parte de la casa donde de verdad pasa la vida.",
-    seed: "casalta-terraza",
+    seed: "logue-terraza",
     products: [
       { id: "tj1", name: "Asador de carbón 57 cm", brand: "Brasa", price: 7900, seed: "p-asador" },
       { id: "tj2", name: "Macetas de barro (juego de 3)", brand: "Artesanal Oaxaca", price: 1800, seed: "p-macetas" },
@@ -110,7 +111,7 @@ export const collections: Collection[] = [
     blurb: "Para quienes van por la casa.",
     description:
       "Una sola meta grande, con barra de avance visible. Los invitados aportan desde 500 pesos y ustedes retiran cuando quieran.",
-    seed: "casalta-enganche",
+    seed: "logue-enganche",
     products: [
       { id: "pe1", name: "Aportación al enganche", brand: "Meta en efectivo", price: 250000, seed: "p-casa" },
       { id: "pe2", name: "Gastos notariales", brand: "Meta en efectivo", price: 45000, seed: "p-notaria" },
@@ -186,7 +187,7 @@ export const plans = [
     features: [
       "Todo lo de Esencial",
       "0% de comisión al retirar",
-      "Dominio propio (sunombre.casalta.mx)",
+      `Dominio propio (sunombre.${brand.domain})`,
       "Invitaciones por WhatsApp ilimitadas",
       "Meses sin intereses para invitados",
       "Panel de agradecimientos",

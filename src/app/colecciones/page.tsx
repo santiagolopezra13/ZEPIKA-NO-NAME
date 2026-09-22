@@ -15,7 +15,7 @@ export default function CollectionsPage() {
   return (
     <Section className="!pt-12">
       <div className="max-w-3xl">
-        <p className="eyebrow text-clay">Colecciones</p>
+        <p className="eyebrow text-sage-deep">Colecciones</p>
         <h1 className="display mt-4 text-[clamp(2.5rem,6vw,4.5rem)]">
           Empiecen con una
           <br />
@@ -35,10 +35,10 @@ export default function CollectionsPage() {
             <Link
               key={c.slug}
               href={`/colecciones/${c.slug}`}
-              className="group grid items-stretch gap-0 overflow-hidden rounded-[2rem] border border-sand-dark bg-sand/30 transition-colors hover:border-clay/40 md:grid-cols-[0.8fr_1.2fr]"
+              className="group grid items-stretch gap-0 overflow-hidden rounded-[2rem] border border-line bg-shell/30 transition-colors hover:border-sage/40 md:grid-cols-[0.8fr_1.2fr]"
             >
               <div
-                className={`relative aspect-[4/3] bg-sand md:aspect-auto md:min-h-[320px] ${
+                className={`relative aspect-[4/3] bg-shell md:aspect-auto md:min-h-[320px] ${
                   i % 2 ? "md:order-2" : ""
                 }`}
               >
@@ -53,7 +53,7 @@ export default function CollectionsPage() {
 
               <div className="flex flex-col justify-between p-8 md:p-12">
                 <div>
-                  <p className="eyebrow text-clay">
+                  <p className="eyebrow text-sage-deep">
                     Colección 0{i + 1}
                   </p>
                   <h2 className="display mt-4 text-[clamp(1.75rem,3.2vw,2.75rem)]">
@@ -64,7 +64,7 @@ export default function CollectionsPage() {
                   </p>
                 </div>
 
-                <div className="mt-8 flex flex-wrap items-center gap-x-8 gap-y-3 border-t border-sand-dark pt-6 text-sm">
+                <div className="mt-8 flex flex-wrap items-center gap-x-8 gap-y-3 border-t border-line pt-6 text-sm">
                   <span className="text-ink-50">
                     {c.products.length} productos de muestra
                   </span>

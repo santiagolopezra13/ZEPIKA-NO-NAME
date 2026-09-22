@@ -17,8 +17,8 @@ export default function Home() {
       {/* ───────────────── Hero ───────────────── */}
       <section className="relative mx-auto grid max-w-[1400px] items-center gap-10 px-5 pt-10 pb-16 md:px-10 md:pt-16 lg:grid-cols-[1.05fr_1fr] lg:gap-16 lg:pb-24">
         <div className="rise">
-          <p className="eyebrow flex items-center gap-3 text-clay">
-            <span className="h-px w-8 bg-clay" />
+          <p className="eyebrow flex items-center gap-3 text-sage-deep">
+            <span className="h-px w-8 bg-sage" />
             Mesa de regalos digital · México
           </p>
 
@@ -27,7 +27,7 @@ export default function Home() {
             <br />
             que sí se siente
             <br />
-            <em className="text-clay not-italic">suya.</em>
+            <em className="text-sage-deep not-italic">suya.</em>
           </h1>
 
           <p className="mt-7 max-w-lg text-lg leading-relaxed text-ink-70">
@@ -59,9 +59,9 @@ export default function Home() {
 
         {/* Collage */}
         <div className="relative h-[420px] sm:h-[520px] lg:h-[660px]">
-          <div className="absolute top-0 right-0 h-[72%] w-[70%] overflow-hidden rounded-[2rem] bg-sand">
+          <div className="absolute top-0 right-0 h-[72%] w-[70%] overflow-hidden rounded-[2rem] bg-shell">
             <Image
-              src={img("casalta-hero-a", 900, 1200)}
+              src={img("logue-hero-a", 900, 1200)}
               alt="Pareja en su casa nueva"
               fill
               priority
@@ -69,9 +69,9 @@ export default function Home() {
               className="object-cover"
             />
           </div>
-          <div className="absolute bottom-0 left-0 h-[52%] w-[54%] overflow-hidden rounded-[2rem] border-[6px] border-cream bg-sand">
+          <div className="absolute bottom-0 left-0 h-[52%] w-[54%] overflow-hidden rounded-[2rem] border-[6px] border-cream bg-shell">
             <Image
-              src={img("casalta-hero-b", 800, 800)}
+              src={img("logue-hero-b", 800, 800)}
               alt="Detalle de vajilla artesanal"
               fill
               sizes="(max-width: 1024px) 54vw, 26vw"
@@ -80,11 +80,11 @@ export default function Home() {
           </div>
 
           {/* Tarjeta flotante */}
-          <div className="absolute bottom-[14%] right-[2%] w-[13.5rem] rounded-2xl border border-sand-dark bg-cream p-4 shadow-[0_18px_50px_-20px_rgba(23,19,15,0.35)]">
+          <div className="absolute bottom-[14%] right-[2%] w-[13.5rem] rounded-2xl border border-line bg-cream p-4 shadow-[0_18px_50px_-20px_rgba(23,19,15,0.35)]">
             <p className="eyebrow text-ink-50">Meta · Enganche</p>
             <p className="display mt-2 text-2xl">{mxn(163500)}</p>
-            <div className="mt-3 h-1.5 overflow-hidden rounded-full bg-sand-dark">
-              <div className="h-full w-[65%] rounded-full bg-clay" />
+            <div className="mt-3 h-1.5 overflow-hidden rounded-full bg-line">
+              <div className="h-full w-[65%] rounded-full bg-sage" />
             </div>
             <p className="mt-2 text-xs text-ink-50">
               65% de {mxn(250000)} · 41 invitados
@@ -94,14 +94,14 @@ export default function Home() {
       </section>
 
       {/* ───────────────── Diferenciadores ───────────────── */}
-      <section className="border-y border-sand-dark bg-sand/40">
+      <section className="border-y border-line bg-shell/40">
         <div className="mx-auto grid max-w-[1400px] gap-px px-5 md:grid-cols-2 md:px-10 lg:grid-cols-4">
           {differentiators.map((d) => (
             <div
               key={d.title}
-              className="group border-b border-sand-dark py-10 pr-6 last:border-b-0 lg:border-b-0 lg:border-r lg:last:border-r-0"
+              className="group border-b border-line py-10 pr-6 last:border-b-0 lg:border-b-0 lg:border-r lg:last:border-r-0"
             >
-              <p className="display text-4xl text-clay transition-transform duration-300 group-hover:-translate-y-0.5">
+              <p className="display text-4xl text-sage-deep transition-transform duration-300 group-hover:-translate-y-0.5">
                 {d.metric}
               </p>
               <h3 className="mt-3 font-medium">{d.title}</h3>
@@ -127,13 +127,13 @@ export default function Home() {
           cta={{ href: "/como-funciona", label: "Ver el detalle completo" }}
         />
 
-        <div className="mt-16 grid gap-px border-t border-sand-dark md:grid-cols-3">
+        <div className="mt-16 grid gap-px border-t border-line md:grid-cols-3">
           {steps.map((s) => (
             <div
               key={s.n}
-              className="border-b border-sand-dark pt-8 pb-10 pr-8 md:border-b-0 md:border-r md:last:border-r-0"
+              className="border-b border-line pt-8 pb-10 pr-8 md:border-b-0 md:border-r md:last:border-r-0"
             >
-              <p className="display text-5xl text-sand-dark">{s.n}</p>
+              <p className="display text-5xl text-line">{s.n}</p>
               <h3 className="display mt-6 text-2xl">{s.title}</h3>
               <p className="mt-3 leading-relaxed text-ink-70">{s.body}</p>
             </div>
@@ -142,10 +142,10 @@ export default function Home() {
       </Section>
 
       {/* ───────────────── Retiro 0% ───────────────── */}
-      <section className="relative overflow-hidden bg-ink text-cream">
+      <section className="relative overflow-hidden bg-forest text-cream">
         <div className="paper relative mx-auto grid max-w-[1400px] gap-14 px-5 py-24 md:px-10 md:py-32 lg:grid-cols-2 lg:items-center">
           <div>
-            <p className="eyebrow text-gold">El dinero es suyo</p>
+            <p className="eyebrow text-sand">El dinero es suyo</p>
             <h2 className="display mt-4 text-[clamp(2rem,4.6vw,3.6rem)] text-cream">
               Otras plataformas se
               <br />
@@ -190,12 +190,12 @@ export default function Home() {
               <div>
                 <div className="flex items-baseline justify-between">
                   <p className="text-cream">
-                    {brand.name} <span className="text-gold">Completo</span>
+                    {brand.name} <span className="text-sand">Completo</span>
                   </p>
-                  <p className="display text-3xl text-gold">{mxn(180000)}</p>
+                  <p className="display text-3xl text-sand">{mxn(180000)}</p>
                 </div>
                 <div className="mt-2.5 h-2 overflow-hidden rounded-full bg-cream/10">
-                  <div className="h-full w-full rounded-full bg-gold" />
+                  <div className="h-full w-full rounded-full bg-sand" />
                 </div>
                 <p className="mt-1.5 text-xs text-cream/40">
                   Comisión {mxn(0)} · plan {mxn(1490)} pagado una vez
@@ -205,7 +205,7 @@ export default function Home() {
 
             <div className="mt-8 flex items-baseline justify-between border-t border-cream/15 pt-6">
               <p className="text-sm text-cream/60">Diferencia a su favor</p>
-              <p className="display text-3xl text-gold">+{mxn(3910)}</p>
+              <p className="display text-3xl text-sand">+{mxn(3910)}</p>
             </div>
           </div>
         </div>
@@ -234,7 +234,7 @@ export default function Home() {
               className="group block"
             >
               <div
-                className={`relative overflow-hidden rounded-[1.75rem] bg-sand ${
+                className={`relative overflow-hidden rounded-[1.75rem] bg-shell ${
                   i % 3 === 1 ? "aspect-[4/5]" : "aspect-[4/4.4]"
                 }`}
               >
@@ -245,7 +245,7 @@ export default function Home() {
                   sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 30vw"
                   className="object-cover transition-transform duration-700 group-hover:scale-[1.04]"
                 />
-                <div className="absolute inset-x-0 bottom-0 h-1/2 bg-gradient-to-t from-ink/70 to-transparent" />
+                <div className="absolute inset-x-0 bottom-0 h-1/2 bg-gradient-to-t from-forest/70 to-transparent" />
                 <div className="absolute inset-x-0 bottom-0 p-6">
                   <p className="display text-2xl text-cream">{c.name}</p>
                   <p className="mt-1 text-sm text-cream/80">{c.blurb}</p>
@@ -263,10 +263,10 @@ export default function Home() {
       </Section>
 
       {/* ───────────────── Sitio + invitaciones ───────────────── */}
-      <section className="border-y border-sand-dark bg-sand/40">
+      <section className="border-y border-line bg-shell/40">
         <div className="mx-auto grid max-w-[1400px] gap-16 px-5 py-24 md:px-10 md:py-32 lg:grid-cols-[1fr_0.85fr] lg:items-center">
           <div>
-            <p className="eyebrow text-clay">Sitio e invitaciones</p>
+            <p className="eyebrow text-sage-deep">Sitio e invitaciones</p>
             <h2 className="display mt-4 text-[clamp(2rem,4.6vw,3.6rem)]">
               Su evento completo
               <br />
@@ -281,14 +281,17 @@ export default function Home() {
 
             <ul className="mt-9 grid gap-4 sm:grid-cols-2">
               {[
-                ["Dominio propio", "sunombre.casalta.mx o el dominio que ya tengan."],
+                [
+                  "Dominio propio",
+                  `sunombre.${brand.domain} o el dominio que ya tengan.`,
+                ],
                 ["Invitación por WhatsApp", "Se envía y se lee. No como el correo."],
                 ["Confirmación con acompañantes", "Sepan cuántos llegan y qué comen."],
                 ["Recordatorios automáticos", "A los 30, 7 y 1 día del evento."],
                 ["Agradecimientos", "Quién regaló qué, listo para el thank you."],
                 ["Multi-evento", "Boda, XV, baby shower o casa nueva."],
               ].map(([t, d]) => (
-                <li key={t} className="border-t border-sand-dark pt-4">
+                <li key={t} className="border-t border-line pt-4">
                   <p className="font-medium">{t}</p>
                   <p className="mt-1 text-sm text-ink-70">{d}</p>
                 </li>
@@ -298,9 +301,9 @@ export default function Home() {
 
           {/* Mock de teléfono */}
           <div className="mx-auto w-full max-w-[330px]">
-            <div className="rounded-[2.75rem] border-[10px] border-ink bg-ink p-1 shadow-[0_30px_70px_-30px_rgba(23,19,15,0.6)]">
+            <div className="rounded-[2.75rem] border-[10px] border-ink bg-forest p-1 shadow-[0_30px_70px_-30px_rgba(23,19,15,0.6)]">
               <div className="overflow-hidden rounded-[2.1rem] bg-cream">
-                <div className="relative h-52 bg-sand">
+                <div className="relative h-52 bg-shell">
                   <Image
                     src={img("demo-hero", 700, 500)}
                     alt="Sitio de evento de ejemplo"
@@ -308,25 +311,25 @@ export default function Home() {
                     sizes="330px"
                     className="object-cover"
                   />
-                  <div className="absolute inset-0 bg-ink/25" />
+                  <div className="absolute inset-0 bg-forest/25" />
                   <div className="absolute inset-0 flex flex-col items-center justify-center text-cream">
                     <p className="eyebrow text-cream/70">14.02.2027</p>
                     <p className="display mt-1 text-3xl">Ana &amp; Diego</p>
                   </div>
                 </div>
                 <div className="space-y-3 p-5">
-                  <div className="rounded-xl bg-sand/70 p-3">
+                  <div className="rounded-xl bg-shell/70 p-3">
                     <p className="text-xs text-ink-50">Faltan</p>
                     <p className="display text-xl">142 días</p>
                   </div>
-                  <button className="w-full rounded-xl bg-clay py-3 text-sm text-cream">
+                  <button className="w-full rounded-xl bg-sage-deep py-3 text-sm text-cream">
                     Confirmar asistencia
                   </button>
                   <button className="w-full rounded-xl border border-ink/15 py-3 text-sm">
                     Ver mesa de regalos
                   </button>
                   <div className="flex items-center gap-2 pt-1 text-[0.7rem] text-ink-50">
-                    <span className="h-1.5 w-1.5 rounded-full bg-olive" />
+                    <span className="h-1.5 w-1.5 rounded-full bg-sage" />
                     41 invitados confirmados
                   </div>
                 </div>
@@ -336,7 +339,7 @@ export default function Home() {
               Así lo ve su invitado.{" "}
               <Link
                 href="/mesa/ana-y-diego"
-                className="text-clay underline decoration-clay/30 underline-offset-4"
+                className="text-sage-deep underline decoration-sage-deep/30 underline-offset-4"
               >
                 Ábranlo completo
               </Link>
@@ -361,10 +364,10 @@ export default function Home() {
           {testimonials.map((t) => (
             <figure
               key={t.author}
-              className="flex flex-col justify-between rounded-[1.75rem] border border-sand-dark bg-sand/30 p-8"
+              className="flex flex-col justify-between rounded-[1.75rem] border border-line bg-shell/30 p-8"
             >
               <div>
-                <div className="flex gap-1 text-gold" aria-label="5 de 5">
+                <div className="flex gap-1 text-sand" aria-label="5 de 5">
                   {Array.from({ length: 5 }).map((_, i) => (
                     <Star key={i} />
                   ))}
@@ -373,7 +376,7 @@ export default function Home() {
                   “{t.quote}”
                 </blockquote>
               </div>
-              <figcaption className="mt-8 border-t border-sand-dark pt-5">
+              <figcaption className="mt-8 border-t border-line pt-5">
                 <p className="font-medium">{t.author}</p>
                 <p className="text-sm text-ink-50">{t.detail}</p>
               </figcaption>
@@ -384,10 +387,10 @@ export default function Home() {
 
       {/* ───────────────── Tipos de evento ───────────────── */}
       <Section className="!pt-0">
-        <div className="rounded-[2rem] border border-sand-dark bg-sand/40 p-8 md:p-14">
+        <div className="rounded-[2rem] border border-line bg-shell/40 p-8 md:p-14">
           <div className="flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
             <div>
-              <p className="eyebrow text-clay">No solo bodas</p>
+              <p className="eyebrow text-sage-deep">No solo bodas</p>
               <h2 className="display mt-3 text-[clamp(1.75rem,3.6vw,2.75rem)]">
                 Cualquier evento que
                 <br />
@@ -404,7 +407,7 @@ export default function Home() {
               <Link
                 key={e.name}
                 href="/crear"
-                className="rounded-full border border-ink/15 bg-cream px-6 py-3 text-sm transition-all hover:border-clay hover:text-clay"
+                className="rounded-full border border-ink/15 bg-cream px-6 py-3 text-sm transition-all hover:border-sage hover:text-sage-deep"
               >
                 {e.name}
               </Link>

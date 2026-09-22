@@ -25,7 +25,7 @@ function resolveDatabaseUrl(): string | undefined {
     const fs = require("node:fs") as typeof import("node:fs");
     const path = require("node:path") as typeof import("node:path");
 
-    const target = "/tmp/casalta.db";
+    const target = "/tmp/logue.db";
     if (!fs.existsSync(target)) {
       const source = path.join(process.cwd(), "prisma", "seed.db");
       if (fs.existsSync(source)) {

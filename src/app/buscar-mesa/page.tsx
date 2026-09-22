@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import SearchRegistry from "@/components/search-registry";
 import { Section } from "@/components/section";
+import { brand } from "@/lib/brand";
 
 export const metadata: Metadata = {
   title: "Buscar una mesa",
@@ -12,7 +13,7 @@ export default function SearchPage() {
   return (
     <Section className="!pt-16">
       <div className="mx-auto max-w-2xl text-center">
-        <p className="eyebrow text-clay">Para invitados</p>
+        <p className="eyebrow text-sage-deep">Para invitados</p>
         <h1 className="display mt-4 text-[clamp(2.5rem,6vw,4.25rem)]">
           Buscar una mesa
         </h1>
@@ -24,12 +25,12 @@ export default function SearchPage() {
 
       <SearchRegistry />
 
-      <div className="mx-auto mt-20 max-w-2xl rounded-[1.75rem] border border-sand-dark bg-sand/40 p-8 text-center md:p-10">
+      <div className="mx-auto mt-20 max-w-2xl rounded-[1.75rem] border border-line bg-shell/40 p-8 text-center md:p-10">
         <p className="display text-2xl">¿No la encuentran?</p>
         <p className="mt-3 text-ink-70">
           Pídanles la liga directa a los anfitriones — se ve como{" "}
           <span className="rounded bg-cream px-2 py-1 font-mono text-sm">
-            casalta.mx/mesa/su-nombre
+            {brand.domain}/mesa/su-nombre
           </span>
           . También pueden escribirnos por WhatsApp y la buscamos por ustedes.
         </p>
