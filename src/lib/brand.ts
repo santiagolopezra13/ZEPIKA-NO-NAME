@@ -21,22 +21,6 @@ export const brand = {
   currency: "MXN",
 } as const;
 
-/** Las cinco letras del logotipo con su color. Ver components/wordmark.tsx */
-export type WordmarkLetter = {
-  char: string;
-  color: string;
-  /** La Ö lleva los dos puntos en arena y azul. */
-  diaeresis?: boolean;
-};
-
-export const wordmarkLetters: WordmarkLetter[] = [
-  { char: "L", color: "text-forest" },
-  { char: "O", color: "text-sage", diaeresis: true },
-  { char: "G", color: "text-sand" },
-  { char: "U", color: "text-mist" },
-  { char: "E", color: "text-sage" },
-];
-
 export const nav = [
   { href: "/colecciones", label: "Colecciones" },
   { href: "/planes", label: "Planes" },

@@ -64,12 +64,14 @@ body {
 }
 
 /**
- * Tipografía editorial. Cormorant Garamond tiene el mismo contraste
- * grueso-delgado del logotipo, pero monta chico: de ahí el 1.06em.
+ * Tipografía editorial de los títulos. El logotipo NO se compone con esta
+ * fuente — es el archivo original (ver components/wordmark.tsx).
  */
 .display {
   font-family: var(--font-display);
-  font-weight: 400;
+  /* 500, no 400: el logotipo tiene trazo grueso y a 400 los títulos se
+     veían endebles a su lado. */
+  font-weight: 500;
   /* Cormorant monta chico; 1.04 la nivela con la sans sin inflarla. */
   font-size: 1.04em;
   letter-spacing: -0.008em;
@@ -106,48 +108,6 @@ body {
   letter-spacing: 0.22em;
   text-transform: uppercase;
   font-weight: 500;
-}
-
-/* ───────────────── Logotipo ───────────────── */
-
-.wordmark {
-  /* El original respira: las letras van separadas, no apretadas. */
-  letter-spacing: 0.05em;
-  font-weight: 500;
-}
-
-/* Guijarros de la diéresis: formas orgánicas, no círculos. */
-.pebble {
-  border-radius: 62% 38% 45% 55% / 55% 48% 52% 45%;
-  transition:
-    transform 0.55s cubic-bezier(0.22, 1, 0.36, 1),
-    border-radius 0.55s ease;
-}
-
-.pebble-a {
-  transform: rotate(-14deg);
-}
-
-.pebble-b {
-  border-radius: 45% 55% 60% 40% / 48% 58% 42% 52%;
-  transform: rotate(11deg);
-}
-
-/* Al pasar el cursor los guijarros se separan y giran: el logo respira. */
-a:hover > .wordmark .pebble-a,
-.wordmark:hover .pebble-a {
-  transform: rotate(-26deg) translate(-0.035em, -0.03em);
-}
-
-a:hover > .wordmark .pebble-b,
-.wordmark:hover .pebble-b {
-  transform: rotate(24deg) translate(0.035em, -0.045em);
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .pebble {
-    transition: none;
-  }
 }
 
 /* Textura de papel muy sutil sobre los bloques oscuros */

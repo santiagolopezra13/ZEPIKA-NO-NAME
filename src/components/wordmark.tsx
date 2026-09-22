@@ -1,77 +1,44 @@
-import { wordmarkLetters } from "@/lib/brand";
+import Image from "next/image";
 
 /**
- * Logotipo LÖGUE reconstruido en texto.
+ * Logotipo LÖGUE — el archivo original, no una reconstrucción.
  *
- * Los dos puntos de la diéresis no son círculos: en el original son guijarros
- * orgánicos, ligeramente inclinados y de distinto tamaño — uno arena y uno
- * azul. Ahí está el carácter de la marca, así que se replican con
- * border-radius asimétrico en vez de `rounded-full`.
+ * Antes se rehacía con tipografía web (Cormorant Garamond) y se veía débil:
+ * el logotipo real tiene trazos gruesos y mucho contraste, y las serifas y
+ * la diéresis de guijarros no se pueden imitar con una fuente. Ahora se usa
+ * el PNG recortado a la caja de la tinta.
  *
- * `tone="cream"` lo pasa a un solo color para fondos oscuros, donde la
- * versión policromática pierde contraste.
+ * `tone="cream"` sirve para los fondos oscuros: mismo trazo, tinta en crema,
+ * porque el verde bosque de la "L" desaparecería sobre el pie de página.
  */
+
+/**
+ * El archivo recortado mide 1291 × 349. Aquí se declara a 4× del tamaño en
+ * que realmente se muestra (~28 px de alto), no a su tamaño nativo: así
+ * next/image sirve unos pocos kilobytes en vez de pedir 3840 px de ancho
+ * para un logotipo de cien.
+ */
+const W = 414;
+const H = 112;
+
 export default function Wordmark({
-  className = "",
+  className = "h-7",
   tone = "color",
-  animate = false,
+  priority = false,
 }: {
+  /** Controla la altura (h-6, h-7, …); el ancho se calcula solo. */
   className?: string;
   tone?: "color" | "cream";
-  /** Entrada escalonada letra por letra. Solo en la portada. */
-  animate?: boolean;
+  priority?: boolean;
 }) {
-  const mono = tone === "cream";
-
   return (
-    <span
-      className={`wordmark display inline-flex items-baseline leading-none ${className}`}
-      aria-label="LÖGUE"
-      role="img"
-    >
-      {wordmarkLetters.map((l, i) => {
-        const color = mono ? "text-cream" : l.color;
-        const style = animate
-          ? { animationDelay: `${i * 70}ms` }
-          : undefined;
-
-        if (!l.diaeresis) {
-          return (
-            <span
-              key={i}
-              className={`${color} ${animate ? "rise" : ""}`}
-              style={style}
-            >
-              {l.char}
-            </span>
-          );
-        }
-
-        return (
-          <span
-            key={i}
-            className={`relative inline-block ${animate ? "rise" : ""}`}
-            style={style}
-          >
-            <span className={color}>{l.char}</span>
-            <span
-              aria-hidden
-              className="pebbles absolute -top-[0.26em] left-1/2 flex -translate-x-1/2 items-end gap-[0.06em]"
-            >
-              <span
-                className={`pebble pebble-a block h-[0.125em] w-[0.135em] ${
-                  mono ? "bg-cream" : "bg-sand"
-                }`}
-              />
-              <span
-                className={`pebble pebble-b block h-[0.145em] w-[0.12em] ${
-                  mono ? "bg-cream" : "bg-mist"
-                }`}
-              />
-            </span>
-          </span>
-        );
-      })}
-    </span>
+    <Image
+      src={tone === "cream" ? "/marca/logue-cream.png" : "/marca/logue.png"}
+      alt="LÖGUE"
+      width={W}
+      height={H}
+      priority={priority}
+      className={`w-auto select-none transition-transform duration-500 ease-out ${className}`}
+    />
   );
 }

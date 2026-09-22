@@ -32,8 +32,16 @@ export default function SiteHeader() {
       }`}
     >
       <div className="mx-auto flex max-w-[1240px] items-center justify-between px-5 py-4 md:px-10 md:py-5">
-        <Link href="/" onClick={() => setOpen(false)} aria-label="Inicio">
-          <Wordmark className="text-[1.6rem] md:text-[1.9rem]" />
+        <Link
+          href="/"
+          onClick={() => setOpen(false)}
+          aria-label="Inicio"
+          className="group -my-1 py-1"
+        >
+          <Wordmark
+            priority
+            className="h-6 md:h-7 group-hover:-translate-y-0.5"
+          />
         </Link>
 
         <nav className="hidden items-center gap-9 lg:flex">

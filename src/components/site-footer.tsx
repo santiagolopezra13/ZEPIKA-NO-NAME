@@ -48,7 +48,7 @@ export default function SiteFooter() {
         {/* Enlaces, compactos */}
         <div className="grid gap-10 py-14 sm:grid-cols-2 lg:grid-cols-[1.4fr_repeat(3,1fr)]">
           <div>
-            <Wordmark tone="cream" className="text-[1.75rem]" />
+            <Wordmark tone="cream" className="h-7" />
             <p className="mt-4 max-w-[22ch] text-sm text-cream/55">
               {brand.tagline}
             </p>
