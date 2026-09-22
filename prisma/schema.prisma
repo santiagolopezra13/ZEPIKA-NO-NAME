@@ -5,6 +5,10 @@
 generator client {
   provider = "prisma-client-js"
   output   = "../src/generated/prisma"
+  // "native" es para desarrollo local; los otros dos son los runtimes de
+  // Vercel (arm64 y x64). Sin ellos el cliente se genera solo para macOS
+  // y en producción falla con "could not locate the Query Engine".
+  binaryTargets = ["native", "linux-arm64-openssl-3.0.x", "rhel-openssl-3.0.x"]
 }
 
 datasource db {
