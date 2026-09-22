@@ -104,10 +104,35 @@ body {
 }
 
 .eyebrow {
-  font-size: 0.6875rem;
-  letter-spacing: 0.22em;
+  /* 12px, no 11: por debajo de 12 el texto en versalitas deja de leerse
+     cómodamente en pantallas pequeñas. */
+  font-size: 0.75rem;
+  letter-spacing: 0.2em;
   text-transform: uppercase;
   font-weight: 500;
+}
+
+/**
+ * Área táctil mínima en dispositivos de dedo.
+ *
+ * Los enlaces de texto miden 17–24 px de alto: se leen bien pero son muy
+ * difíciles de acertar. `tap` los lleva a 44 px SOLO donde el puntero es
+ * grueso, así que en escritorio la maquetación no cambia ni un píxel.
+ */
+@media (pointer: coarse) {
+  .tap {
+    display: inline-flex;
+    align-items: center;
+    min-height: 44px;
+  }
+
+  .tap-sq {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 44px;
+    min-height: 44px;
+  }
 }
 
 /* Textura de papel muy sutil sobre los bloques oscuros */
