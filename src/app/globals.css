@@ -124,6 +124,8 @@ body {
     display: inline-flex;
     align-items: center;
     min-height: 44px;
+    /* También el ancho: un enlace corto como "Entrar" medía 39 px. */
+    min-width: 44px;
   }
 
   .tap-sq {

@@ -84,7 +84,7 @@ export default function SearchRegistry() {
           <button
             onClick={() => setQ("")}
             aria-label="Limpiar búsqueda"
-            className="shrink-0 text-ink-50 hover:text-ink"
+            className="tap-sq shrink-0 text-ink-50 hover:text-ink"
           >
             ✕
           </button>
@@ -98,7 +98,7 @@ export default function SearchRegistry() {
             <button
               key={s}
               onClick={() => setQ(s)}
-              className="rounded-full border border-line px-4 py-2 text-sm transition-colors hover:border-sage hover:text-sage-deep"
+              className="tap rounded-full border border-line px-4 py-2 text-sm transition-colors hover:border-sage hover:text-sage-deep"
             >
               {s}
             </button>

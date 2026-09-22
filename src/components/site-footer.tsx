@@ -64,7 +64,7 @@ export default function SiteFooter() {
               />
               <button
                 type="submit"
-                className="shrink-0 text-sm text-sand transition-opacity hover:opacity-70"
+                className="tap-sq shrink-0 text-sm text-sand transition-opacity hover:opacity-70"
               >
                 →
               </button>
@@ -79,7 +79,7 @@ export default function SiteFooter() {
                   <li key={l.href + l.label}>
                     <Link
                       href={l.href}
-                      className="text-sm text-cream/75 transition-colors hover:text-sand"
+                      className="tap text-sm text-cream/75 transition-colors hover:text-sand"
                     >
                       {l.label}
                     </Link>
@@ -95,13 +95,13 @@ export default function SiteFooter() {
             © {new Date().getFullYear()} {brand.legalName}
           </p>
           <p className="flex gap-6">
-            <Link href={`mailto:${brand.email}`} className="hover:text-cream/70">
+            <Link href={`mailto:${brand.email}`} className="tap hover:text-cream/70">
               {brand.email}
             </Link>
-            <Link href="/legal/privacidad" className="hover:text-cream/70">
+            <Link href="/legal/privacidad" className="tap hover:text-cream/70">
               Privacidad
             </Link>
-            <Link href="/legal/terminos" className="hover:text-cream/70">
+            <Link href="/legal/terminos" className="tap hover:text-cream/70">
               Términos
             </Link>
           </p>

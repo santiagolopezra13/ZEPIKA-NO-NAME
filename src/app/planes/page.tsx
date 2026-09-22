@@ -162,7 +162,7 @@ export default function PlansPage() {
               </p>
               <Link
                 href={brand.whatsappUrl}
-                className="mt-5 inline-block text-sage-deep underline decoration-sage-deep/30 underline-offset-4"
+                className="tap mt-5 text-sage-deep underline decoration-sage-deep/30 underline-offset-4"
               >
                 {brand.whatsapp}
               </Link>

@@ -38,7 +38,7 @@ export default async function RegistryPage({ params }: Props) {
       <div className="bg-sage-deep px-5 py-2.5 text-center text-xs text-cream md:px-10">
         Mesa de ejemplo con datos reales de la base de datos — prueben a regalar
         o confirmar.{" "}
-        <Link href="/crear" className="underline underline-offset-2">
+        <Link href="/crear" className="tap underline underline-offset-2">
           Crear la mía
         </Link>
       </div>
@@ -154,7 +154,7 @@ export default async function RegistryPage({ params }: Props) {
         </p>
         <Link
           href="/crear"
-          className="display mt-2 inline-block text-2xl transition-colors hover:text-sage-deep"
+          className="tap display mt-2 text-2xl transition-colors hover:text-sage-deep"
         >
           Crear su propia mesa →
         </Link>

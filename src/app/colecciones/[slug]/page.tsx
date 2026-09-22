@@ -33,7 +33,7 @@ export default async function CollectionPage({ params }: Props) {
       <Section className="!pb-10 !pt-10">
         <Link
           href="/colecciones"
-          className="text-sm text-ink-50 transition-colors hover:text-sage-deep"
+          className="tap text-sm text-ink-50 transition-colors hover:text-sage-deep"
         >
           ← Todas las colecciones
         </Link>

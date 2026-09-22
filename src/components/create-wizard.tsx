@@ -290,7 +290,7 @@ export default function CreateWizard() {
         ¿Prefieren que alguien lo haga con ustedes?{" "}
         <Link
           href={brand.whatsappUrl}
-          className="text-sage-deep underline decoration-sage-deep/30 underline-offset-4"
+          className="tap text-sage-deep underline decoration-sage-deep/30 underline-offset-4"
         >
           Escríbannos por WhatsApp
         </Link>

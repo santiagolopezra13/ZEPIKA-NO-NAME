@@ -68,9 +68,24 @@ function inspect() {
       out.tiny.push(`${label()} → ${fs.toFixed(1)}px`);
     }
 
-    // Objetivo táctil pequeño
+    // Objetivo táctil pequeño.
+    //
+    // WCAG 2.5.8 exime los enlaces que van dentro de una frase: su tamaño lo
+    // impone el interlineado del texto que los rodea, y agrandarlos rompería
+    // el renglón. Se detectan porque su contenedor tiene bastante más texto
+    // que el propio enlace.
     if (["A", "BUTTON", "INPUT", "SELECT"].includes(el.tagName)) {
-      if ((r.height < 40 || r.width < 40) && r.height > 0 && out.small.length < 6) {
+      const parentText = el.parentElement?.textContent?.trim().length ?? 0;
+      const ownText = el.textContent?.trim().length ?? 0;
+      const inlineInSentence =
+        cs.display.startsWith("inline") && parentText > ownText + 10;
+
+      if (
+        !inlineInSentence &&
+        (r.height < 40 || r.width < 40) &&
+        r.height > 0 &&
+        out.small.length < 6
+      ) {
         out.small.push(
           `${label()} → ${Math.round(r.width)}×${Math.round(r.height)}px`,
         );

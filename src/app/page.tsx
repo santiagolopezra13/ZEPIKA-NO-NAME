@@ -68,7 +68,7 @@ function Hero() {
             </Link>
             <Link
               href="/mesa/ana-y-diego"
-              className="group text-[0.95rem] text-ink-70 transition-colors hover:text-ink"
+              className="tap group text-[0.95rem] text-ink-70 transition-colors hover:text-ink"
             >
               Ver una mesa real
               <span className="ml-1.5 inline-block transition-transform group-hover:translate-x-1">
@@ -170,7 +170,7 @@ function HowItWorks() {
           <li className="py-7">
             <Link
               href="/planes"
-              className="group text-[0.95rem] text-ink transition-colors hover:text-sage-deep"
+              className="tap group text-[0.95rem] text-ink transition-colors hover:text-sage-deep"
             >
               Ver planes desde {mxn(0)}
               <span className="ml-1.5 inline-block transition-transform group-hover:translate-x-1">
@@ -201,7 +201,7 @@ function Collections() {
         <div className="col-span-4 mt-4 md:col-span-4 md:col-start-9 md:mt-0 md:text-right">
           <Link
             href="/colecciones"
-            className="group text-[0.95rem] text-ink-70 transition-colors hover:text-ink"
+            className="tap group text-[0.95rem] text-ink-70 transition-colors hover:text-ink"
           >
             Las {collections.length} colecciones
             <span className="ml-1.5 inline-block transition-transform group-hover:translate-x-1">
@@ -239,7 +239,7 @@ function Collections() {
             <li key={c.slug}>
               <Link
                 href={`/colecciones/${c.slug}`}
-                className="display t-3 text-ink-50 transition-colors hover:text-sage-deep"
+                className="tap display t-3 text-ink-50 transition-colors hover:text-sage-deep"
               >
                 {c.name}
               </Link>

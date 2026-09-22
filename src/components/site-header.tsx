@@ -31,12 +31,12 @@ export default function SiteHeader() {
           : "bg-transparent"
       }`}
     >
-      <div className="mx-auto flex max-w-[1240px] items-center justify-between px-5 py-4 md:px-10 md:py-5">
+      <div className="mx-auto flex max-w-[1240px] items-center justify-between px-6 py-4 md:px-10 md:py-5">
         <Link
           href="/"
           onClick={() => setOpen(false)}
           aria-label="Inicio"
-          className="group -my-1 py-1"
+          className="tap group -my-1 py-1"
         >
           <Wordmark
             priority
@@ -60,7 +60,7 @@ export default function SiteHeader() {
         <div className="hidden items-center gap-3 lg:flex">
           <Link
             href="/entrar"
-            className="px-3 py-2 text-[0.9rem] text-ink-70 transition-colors hover:text-ink"
+            className="tap px-3 py-2 text-[0.9rem] text-ink-70 transition-colors hover:text-ink"
           >
             Entrar
           </Link>
@@ -98,7 +98,7 @@ export default function SiteHeader() {
           open ? "max-h-[80vh] opacity-100" : "max-h-0 opacity-0"
         }`}
       >
-        <div className="flex flex-col px-5 py-6">
+        <div className="flex flex-col px-6 py-6">
           {nav.map((i, idx) => (
             <Link
               key={i.href}
