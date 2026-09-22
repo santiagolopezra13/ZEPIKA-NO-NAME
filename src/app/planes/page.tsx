@@ -43,7 +43,7 @@ export default function PlansPage() {
       <Section className="!pb-12 !pt-12">
         <div className="max-w-3xl">
           <p className="eyebrow text-sage-deep">Planes</p>
-          <h1 className="display mt-4 text-[clamp(2.5rem,6vw,4.5rem)]">
+          <h1 className="display mt-4 t-hero">
             Pago único.
             <br />
             Sin suscripción.
@@ -148,11 +148,11 @@ export default function PlansPage() {
 
       {/* Preguntas */}
       <section className="border-t border-line bg-shell/40">
-        <div className="mx-auto max-w-[1400px] px-5 py-24 md:px-10 md:py-28">
+        <div className="mx-auto max-w-[1240px] px-6 py-24 md:px-10 md:py-28">
           <div className="grid gap-12 lg:grid-cols-[0.8fr_1.2fr]">
             <div>
               <p className="eyebrow text-sage-deep">Preguntas</p>
-              <h2 className="display mt-4 text-[clamp(2rem,4vw,3rem)]">
+              <h2 className="display mt-4 t-1">
                 Lo que todos
                 <br />
                 preguntan primero.

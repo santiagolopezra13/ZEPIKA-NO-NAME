@@ -310,7 +310,7 @@ function Fieldset({
 }) {
   return (
     <div>
-      <h2 className="display text-[clamp(1.5rem,3.2vw,2.25rem)]">{title}</h2>
+      <h2 className="display t-1">{title}</h2>
       <p className="mt-2.5 text-ink-70">{hint}</p>
       <div className="mt-8">{children}</div>
     </div>

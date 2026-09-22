@@ -41,7 +41,7 @@ export default async function CollectionPage({ params }: Props) {
         <div className="mt-8 grid gap-10 lg:grid-cols-[1.1fr_1fr] lg:items-center">
           <div>
             <p className="eyebrow text-sage-deep">Colección</p>
-            <h1 className="display mt-4 text-[clamp(2.5rem,6vw,4.5rem)]">
+            <h1 className="display mt-4 t-hero">
               {collection.name}
             </h1>
             <p className="mt-6 max-w-xl text-lg leading-relaxed text-ink-70">

@@ -12,7 +12,7 @@ export function Section({
   return (
     <section
       id={id}
-      className={`mx-auto max-w-[1400px] px-5 py-20 md:px-10 md:py-28 ${className}`}
+      className={`mx-auto max-w-[1240px] px-6 py-20 md:px-10 md:py-28 ${className}`}
     >
       {children}
     </section>
@@ -34,7 +34,7 @@ export function SectionHead({
     <div className="flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
       <div className="max-w-2xl">
         <p className="eyebrow text-sage-deep">{eyebrow}</p>
-        <h2 className="display mt-4 text-[clamp(2rem,4.6vw,3.6rem)]">{title}</h2>
+        <h2 className="display mt-4 t-1">{title}</h2>
         {body && <p className="mt-5 max-w-xl text-ink-70">{body}</p>}
       </div>
       {cta && (

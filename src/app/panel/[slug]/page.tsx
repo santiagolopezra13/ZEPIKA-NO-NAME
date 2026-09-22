@@ -42,12 +42,12 @@ export default async function PanelPage({ params }: Props) {
   const declined = rsvps.length - attending.length;
 
   return (
-    <div className="mx-auto max-w-[1400px] px-5 py-12 md:px-10 md:py-16">
+    <div className="mx-auto max-w-[1240px] px-6 py-12 md:px-10 md:py-16">
       {/* Encabezado */}
       <div className="flex flex-col gap-6 border-b border-line pb-10 md:flex-row md:items-end md:justify-between">
         <div>
           <p className="eyebrow text-sage-deep">Panel del anfitrión</p>
-          <h1 className="display mt-3 text-[clamp(2rem,5vw,3.5rem)]">
+          <h1 className="display mt-3 t-hero">
             {registry.title}
           </h1>
           <p className="mt-2 text-ink-70">

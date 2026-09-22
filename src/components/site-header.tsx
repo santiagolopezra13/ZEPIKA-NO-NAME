@@ -31,7 +31,7 @@ export default function SiteHeader() {
           : "bg-transparent"
       }`}
     >
-      <div className="mx-auto flex max-w-[1400px] items-center justify-between px-5 py-4 md:px-10 md:py-5">
+      <div className="mx-auto flex max-w-[1240px] items-center justify-between px-5 py-4 md:px-10 md:py-5">
         <Link href="/" onClick={() => setOpen(false)} aria-label="Inicio">
           <Wordmark className="text-[1.6rem] md:text-[1.9rem]" />
         </Link>

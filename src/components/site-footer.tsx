@@ -31,10 +31,10 @@ const columns = [
 export default function SiteFooter() {
   return (
     <footer className="relative overflow-hidden bg-forest text-cream">
-      <div className="paper relative mx-auto max-w-[1400px] px-5 py-16 md:px-10 md:py-20">
+      <div className="paper relative mx-auto max-w-[1240px] px-6 py-16 md:px-10 md:py-20">
         {/* Cierre en una sola línea */}
         <div className="flex flex-col gap-8 border-b border-cream/12 pb-14 md:flex-row md:items-end md:justify-between">
-          <h2 className="display max-w-xl text-[clamp(1.9rem,4.5vw,3.25rem)] text-cream">
+          <h2 className="display max-w-xl t-1 text-cream">
             Su mesa puede estar lista esta noche.
           </h2>
           <Link

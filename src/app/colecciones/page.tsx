@@ -16,7 +16,7 @@ export default function CollectionsPage() {
     <Section className="!pt-12">
       <div className="max-w-3xl">
         <p className="eyebrow text-sage-deep">Colecciones</p>
-        <h1 className="display mt-4 text-[clamp(2.5rem,6vw,4.5rem)]">
+        <h1 className="display mt-4 t-hero">
           Empiecen con una
           <br />
           mesa ya armada.
@@ -56,7 +56,7 @@ export default function CollectionsPage() {
                   <p className="eyebrow text-sage-deep">
                     Colección 0{i + 1}
                   </p>
-                  <h2 className="display mt-4 text-[clamp(1.75rem,3.2vw,2.75rem)]">
+                  <h2 className="display mt-4 t-1">
                     {c.name}
                   </h2>
                   <p className="mt-4 max-w-xl leading-relaxed text-ink-70">

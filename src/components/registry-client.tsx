@@ -44,9 +44,9 @@ export default function RegistryClient({
       {/* Metas en efectivo */}
       {goals.length > 0 && (
         <section className="border-y border-line bg-shell/40">
-          <div className="mx-auto max-w-[1400px] px-5 py-20 md:px-10 md:py-24">
+          <div className="mx-auto max-w-[1240px] px-6 py-20 md:px-10 md:py-24">
             <p className="eyebrow text-sage-deep">Nuestras metas</p>
-            <h2 className="display mt-4 text-[clamp(1.75rem,3.6vw,2.75rem)]">
+            <h2 className="display mt-4 t-1">
               Si prefieren aportar en efectivo
             </h2>
 
@@ -111,11 +111,11 @@ export default function RegistryClient({
       )}
 
       {/* Mesa de regalos */}
-      <section className="mx-auto max-w-[1400px] px-5 py-20 md:px-10 md:py-28">
+      <section className="mx-auto max-w-[1240px] px-6 py-20 md:px-10 md:py-28">
         <div className="flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
           <div>
             <p className="eyebrow text-sage-deep">Mesa de regalos</p>
-            <h2 className="display mt-4 text-[clamp(1.75rem,3.6vw,2.75rem)]">
+            <h2 className="display mt-4 t-1">
               Lo que nos hace falta
             </h2>
           </div>

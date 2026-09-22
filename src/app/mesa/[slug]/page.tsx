@@ -58,7 +58,7 @@ export default async function RegistryPage({ params }: Props) {
           <p className="eyebrow text-cream/70">
             {r.eventType === "Boda" ? "Nos casamos" : r.eventType}
           </p>
-          <h1 className="display mt-4 text-[clamp(3rem,10vw,7rem)]">
+          <h1 className="display mt-4 t-hero">
             {r.title}
           </h1>
           <div className="mt-6 flex flex-col items-center gap-1.5 text-cream/85">
@@ -76,7 +76,7 @@ export default async function RegistryPage({ params }: Props) {
 
       {/* Indicadores en vivo */}
       <section className="border-b border-line">
-        <div className="mx-auto grid max-w-[1400px] gap-px px-5 md:grid-cols-4 md:px-10">
+        <div className="mx-auto grid max-w-[1240px] gap-px px-5 md:grid-cols-4 md:px-10">
           {[
             daysLeft !== null && daysLeft >= 0
               ? ["Faltan", `${daysLeft} días`]
@@ -99,7 +99,7 @@ export default async function RegistryPage({ params }: Props) {
       {/* Mensaje */}
       {r.message && (
         <section className="mx-auto max-w-3xl px-5 py-20 text-center md:py-28">
-          <p className="display text-[clamp(1.5rem,3.2vw,2.25rem)] leading-snug">
+          <p className="display t-1 leading-snug">
             “{r.message}”
           </p>
         </section>
@@ -118,10 +118,10 @@ export default async function RegistryPage({ params }: Props) {
         id="confirmar"
         className="relative overflow-hidden bg-forest text-cream"
       >
-        <div className="paper relative mx-auto grid max-w-[1400px] gap-14 px-5 py-24 md:px-10 md:py-28 lg:grid-cols-2">
+        <div className="paper relative mx-auto grid max-w-[1240px] gap-14 px-5 py-24 md:px-10 md:py-28 lg:grid-cols-2">
           <div>
             <p className="eyebrow text-sand">Confirmación</p>
-            <h2 className="display mt-4 text-[clamp(2rem,4vw,3.25rem)] text-cream">
+            <h2 className="display mt-4 t-1 text-cream">
               ¿Nos acompañan?
             </h2>
             <p className="mt-6 max-w-md leading-relaxed text-cream/70">
@@ -148,7 +148,7 @@ export default async function RegistryPage({ params }: Props) {
         </div>
       </section>
 
-      <section className="mx-auto max-w-[1400px] px-5 py-16 text-center md:px-10">
+      <section className="mx-auto max-w-[1240px] px-6 py-16 text-center md:px-10">
         <p className="text-sm text-ink-50">
           Mesa administrada con {brand.name}
         </p>

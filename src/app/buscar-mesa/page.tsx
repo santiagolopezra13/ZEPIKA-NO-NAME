@@ -14,7 +14,7 @@ export default function SearchPage() {
     <Section className="!pt-16">
       <div className="mx-auto max-w-2xl text-center">
         <p className="eyebrow text-sage-deep">Para invitados</p>
-        <h1 className="display mt-4 text-[clamp(2.5rem,6vw,4.25rem)]">
+        <h1 className="display mt-4 t-hero">
           Buscar una mesa
         </h1>
         <p className="mt-6 text-lg leading-relaxed text-ink-70">

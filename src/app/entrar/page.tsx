@@ -14,12 +14,12 @@ const field =
 
 export default function LoginPage() {
   return (
-    <div className="mx-auto grid max-w-[1400px] items-stretch gap-0 px-5 py-12 md:px-10 lg:grid-cols-2 lg:gap-16">
+    <div className="mx-auto grid max-w-[1240px] items-stretch gap-0 px-5 py-12 md:px-10 lg:grid-cols-2 lg:gap-16">
       {/* Formulario */}
       <div className="flex flex-col justify-center py-8 lg:py-16">
         <div className="mx-auto w-full max-w-md">
           <p className="eyebrow text-sage-deep">Panel de anfitriones</p>
-          <h1 className="display mt-4 text-[clamp(2.25rem,5vw,3.5rem)]">
+          <h1 className="display mt-4 t-hero">
             Entrar a mi mesa
           </h1>
           <p className="mt-4 text-ink-70">
